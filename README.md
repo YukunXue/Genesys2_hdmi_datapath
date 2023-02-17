@@ -11,6 +11,10 @@ Genesys2的手册[网址](https://digilent.com/reference/programmable-logic/gene
 
 Genesys2 的官方ip使用[教程](https://digilent.com/reference/learn/programmable-logic/tutorials/pmod-ips/start)
 
+Digilent 的 [vivado ip](https://github.com/Digilent/vivado-library)  以及导入[教程](https://blog.csdn.net/weixin_32688155/article/details/112289315)
+
+
+
 
 
 

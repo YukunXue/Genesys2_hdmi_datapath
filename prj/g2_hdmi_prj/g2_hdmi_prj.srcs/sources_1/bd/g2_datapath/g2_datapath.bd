@@ -1,0 +1,24 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7k325tffg900-2",
+      "gen_directory": "../../../../g2_hdmi_prj.gen/sources_1/bd/g2_datapath",
+      "name": "g2_datapath",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.2"
+    },
+    "design_tree": {
+      "dvi2rgb_0": ""
+    },
+    "components": {
+      "dvi2rgb_0": {
+        "vlnv": "digilentinc.com:ip:dvi2rgb:2.0",
+        "xci_name": "g2_datapath_dvi2rgb_0_0",
+        "xci_path": "ip\\g2_datapath_dvi2rgb_0_0\\g2_datapath_dvi2rgb_0_0.xci",
+        "inst_hier_path": "dvi2rgb_0"
+      }
+    }
+  }
+}
