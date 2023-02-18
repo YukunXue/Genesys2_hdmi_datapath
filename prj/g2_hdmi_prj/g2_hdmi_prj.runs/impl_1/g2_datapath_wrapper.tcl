@@ -310,13 +310,30 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+OPTRACE "Write Bitstream: pre hook" START { }
+  set src_rc [catch { 
+    puts "source E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/rtl/g2.tcl"
+    source E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/rtl/g2.tcl
+  } _RESULT] 
+  if {$src_rc} { 
+    set tool_flow [get_property -quiet TOOL_FLOW [current_project -quiet]]
+    if { $tool_flow eq {SDx} } { 
+      send_gid_msg -id 2 -ssname VPL_TCL -severity ERROR $_RESULT
+      send_gid_msg -id 3 -ssname VPL_TCL -severity ERROR "sourcing script E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/rtl/g2.tcl failed"
+    } else {
+      send_msg_id runtcl-1 status "$_RESULT"
+      send_msg_id runtcl-2 status "sourcing script E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/rtl/g2.tcl failed"
+    }
+    return -code error
+  }
+OPTRACE "Write Bitstream: pre hook" END { }
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force -no_partial_mmi g2_datapath_wrapper.mmi }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }
-  write_bitstream -force g2_datapath_wrapper.bit 
+  write_bitstream -force g2_datapath_wrapper.bit -bin_file
 OPTRACE "write_bitstream" END { }
 OPTRACE "write_bitstream misc" START { }
 OPTRACE "read constraints: write_bitstream_post" START { }

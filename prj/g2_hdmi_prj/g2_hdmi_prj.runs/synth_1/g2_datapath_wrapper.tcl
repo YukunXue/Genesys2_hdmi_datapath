@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 5
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k325tffg900-2
 
@@ -90,18 +89,18 @@ set_property ip_output_repo e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hd
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/hdl/g2_datapath_wrapper.v
+read_verilog -library xil_defaultlib E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/hdl/g2_datapath_wrapper.v
 add_files E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.srcs/sources_1/bd/g2_datapath/g2_datapath.bd
 set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0.xdc]
 set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/src/ila_refclk/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/src/ila_refclk/ila_refclk_ooc.xdc]
 set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/src/ila_pixclk/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/src/ila_pixclk/ila_pixclk_ooc.xdc]
 set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/src/ila_timing_workaround.xdc]
 set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/src/dvi2rgb.xdc]
 set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/src/dvi2rgb_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/src/ila_refclk/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/src/ila_refclk/ila_refclk_ooc.xdc]
 set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_rgb2dvi_0_0/src/rgb2dvi.xdc]
 set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_rgb2dvi_0_0/src/rgb2dvi_ooc.xdc]
 set_property used_in_implementation false [get_files -all e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_rgb2dvi_0_0/src/rgb2dvi_clocks.xdc]

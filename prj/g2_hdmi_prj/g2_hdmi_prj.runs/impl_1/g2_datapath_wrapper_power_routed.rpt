@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date             : Sat Feb 18 12:04:13 2023
+| Date             : Sat Feb 18 19:41:36 2023
 | Host             : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
 | Command          : report_power -file g2_datapath_wrapper_power_routed.rpt -pb g2_datapath_wrapper_power_summary_routed.pb -rpx g2_datapath_wrapper_power_routed.rpx
 | Design           : g2_datapath_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.560        |
+| Total On-Chip Power (W)  | 0.559        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.398        |
+| Dynamic (W)              | 0.397        |
 | Device Static (W)        | 0.162        |
 | Effective TJA (C/W)      | 1.8          |
 | Max Ambient (C)          | 84.0         |
@@ -54,7 +54,7 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.007 |        5 |       --- |             --- |
 | Slice Logic              |     0.002 |     1508 |       --- |             --- |
-|   LUT as Logic           |     0.002 |      537 |    203800 |            0.26 |
+|   LUT as Logic           |     0.001 |      537 |    203800 |            0.26 |
 |   Register               |    <0.001 |      633 |    407600 |            0.16 |
 |   CARRY4                 |    <0.001 |       18 |     50950 |            0.04 |
 |   BUFG                   |    <0.001 |        4 |        32 |           12.50 |
@@ -62,12 +62,12 @@ Table of Contents
 |   Others                 |    <0.001 |       97 |       --- |             --- |
 |   F7/F8 Muxes            |    <0.001 |       24 |    203800 |            0.01 |
 |   BUFR                   |     0.000 |        1 |       208 |            0.48 |
-| Signals                  |     0.001 |     1066 |       --- |             --- |
+| Signals                  |     0.001 |     1062 |       --- |             --- |
 | MMCM                     |     0.166 |        2 |        10 |           20.00 |
 | PLL                      |     0.054 |        1 |        10 |           10.00 |
 | I/O                      |     0.167 |       21 |       500 |            4.20 |
 | Static Power             |     0.162 |          |           |                 |
-| Total                    |     0.560 |          |           |                 |
+| Total                    |     0.559 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -149,8 +149,8 @@ Table of Contents
 +---------------------+-----------+
 | Name                | Power (W) |
 +---------------------+-----------+
-| g2_datapath_wrapper |     0.398 |
-|   g2_datapath_i     |     0.398 |
+| g2_datapath_wrapper |     0.397 |
+|   g2_datapath_i     |     0.397 |
 |     clk_wiz_0       |     0.114 |
 |       inst          |     0.114 |
 |     dvi2rgb_0       |     0.098 |

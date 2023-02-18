@@ -7,11 +7,11 @@ Genesys2_hdmi_datapath
 
 `prj` :工程文件
 
-`rtl` : rtl代码
+`rtl` : rtl代码、xdc、bit、tcl文件
 
 `vivado_library` : Digilent 的 ip
 
-
+`pic` :图片
 
 
 
@@ -38,3 +38,11 @@ Digilent 的 HDMI [使用例程](https://digilent.com/reference/programmable-log
 板卡： Genesys2
 
 vivado: 2021.2 ML enterprise 
+
+
+
+## 4.功能描述
+
+通过摄像头HDMI接口（1280x720）获取视频源然后转接到HDMI输出
+
+![Snipaste_2023-02-18_19-45-13](E:\g2_hdmi_datapath\Genesys2_hdmi_datapath\pic\Snipaste_2023-02-18_19-45-13.png)
