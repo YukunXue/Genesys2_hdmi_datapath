@@ -1,23 +1,193 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x0",
+      "boundary_crc": "0x43FB5AB54147AD6D",
       "device": "xc7k325tffg900-2",
       "gen_directory": "../../../../g2_hdmi_prj.gen/sources_1/bd/g2_datapath",
       "name": "g2_datapath",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2021.2"
+      "tool_version": "2021.2",
+      "validated": "true"
     },
     "design_tree": {
-      "dvi2rgb_0": ""
+      "clk_wiz_0": "",
+      "dvi2rgb_0": "",
+      "rgb2dvi_0": "",
+      "reset_inv_0": ""
+    },
+    "interface_ports": {
+      "sys_diff_clock": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
+        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "200000000"
+          }
+        }
+      },
+      "hdmi_in": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "digilentinc.com:interface:tmds:1.0",
+        "vlnv": "digilentinc.com:interface:tmds_rtl:1.0"
+      },
+      "hdmi_in_ddc": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:iic:1.0",
+        "vlnv": "xilinx.com:interface:iic_rtl:1.0"
+      },
+      "hdmi_out": {
+        "mode": "Master",
+        "vlnv_bus_definition": "digilentinc.com:interface:tmds:1.0",
+        "vlnv": "digilentinc.com:interface:tmds_rtl:1.0"
+      }
+    },
+    "ports": {
+      "reset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW"
+          }
+        }
+      }
     },
     "components": {
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "g2_datapath_clk_wiz_0_0",
+        "xci_path": "ip\\g2_datapath_clk_wiz_0_0\\g2_datapath_clk_wiz_0_0.xci",
+        "inst_hier_path": "clk_wiz_0",
+        "parameters": {
+          "CLKOUT1_JITTER": {
+            "value": "98.146"
+          },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "200.000"
+          },
+          "CLK_IN1_BOARD_INTERFACE": {
+            "value": "sys_diff_clock"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "5.000"
+          },
+          "RESET_BOARD_INTERFACE": {
+            "value": "reset"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
+      },
       "dvi2rgb_0": {
         "vlnv": "digilentinc.com:ip:dvi2rgb:2.0",
-        "xci_name": "g2_datapath_dvi2rgb_0_0",
-        "xci_path": "ip\\g2_datapath_dvi2rgb_0_0\\g2_datapath_dvi2rgb_0_0.xci",
-        "inst_hier_path": "dvi2rgb_0"
+        "xci_name": "g2_datapath_dvi2rgb_0_1",
+        "xci_path": "ip\\g2_datapath_dvi2rgb_0_1\\g2_datapath_dvi2rgb_0_1.xci",
+        "inst_hier_path": "dvi2rgb_0",
+        "parameters": {
+          "IIC_BOARD_INTERFACE": {
+            "value": "hdmi_in_ddc"
+          },
+          "TMDS_BOARD_INTERFACE": {
+            "value": "hdmi_in"
+          }
+        }
+      },
+      "rgb2dvi_0": {
+        "vlnv": "digilentinc.com:ip:rgb2dvi:1.4",
+        "xci_name": "g2_datapath_rgb2dvi_0_0",
+        "xci_path": "ip\\g2_datapath_rgb2dvi_0_0\\g2_datapath_rgb2dvi_0_0.xci",
+        "inst_hier_path": "rgb2dvi_0",
+        "parameters": {
+          "TMDS_BOARD_INTERFACE": {
+            "value": "hdmi_out"
+          }
+        }
+      },
+      "reset_inv_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "g2_datapath_reset_inv_0_0",
+        "xci_path": "ip\\g2_datapath_reset_inv_0_0\\g2_datapath_reset_inv_0_0.xci",
+        "inst_hier_path": "reset_inv_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "dvi2rgb_0_DDC": {
+        "interface_ports": [
+          "hdmi_in_ddc",
+          "dvi2rgb_0/DDC"
+        ]
+      },
+      "dvi2rgb_0_RGB": {
+        "interface_ports": [
+          "dvi2rgb_0/RGB",
+          "rgb2dvi_0/RGB"
+        ]
+      },
+      "hdmi_in_1": {
+        "interface_ports": [
+          "hdmi_in",
+          "dvi2rgb_0/TMDS"
+        ]
+      },
+      "rgb2dvi_0_TMDS": {
+        "interface_ports": [
+          "hdmi_out",
+          "rgb2dvi_0/TMDS"
+        ]
+      },
+      "sys_diff_clock_1": {
+        "interface_ports": [
+          "sys_diff_clock",
+          "clk_wiz_0/CLK_IN1_D"
+        ]
+      }
+    },
+    "nets": {
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "dvi2rgb_0/RefClk"
+        ]
+      },
+      "dvi2rgb_0_PixelClk": {
+        "ports": [
+          "dvi2rgb_0/PixelClk",
+          "rgb2dvi_0/PixelClk"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "reset_inv_0/Op1"
+        ]
+      },
+      "reset_inv_0_Res": {
+        "ports": [
+          "reset_inv_0/Res",
+          "clk_wiz_0/reset",
+          "dvi2rgb_0/aRst",
+          "dvi2rgb_0/pRst",
+          "rgb2dvi_0/aRst"
+        ]
       }
     }
   }

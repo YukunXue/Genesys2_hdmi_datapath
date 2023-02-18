@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"g2_datapath": {
+			"proto_instances": {
+			}
+		}
+	}
+}

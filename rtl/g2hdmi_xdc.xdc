@@ -1,0 +1,8 @@
+set_property IOSTANDARD LVCMOS33 [get_ports hdmi_in_ddc_scl_io]
+set_property IOSTANDARD LVCMOS33 [get_ports hdmi_in_ddc_sda_io]
+set_property PACKAGE_PIN AJ26 [get_ports {hdmi_in_data_p[0]}]
+set_property PACKAGE_PIN AG27 [get_ports {hdmi_in_data_p[1]}]
+set_property PACKAGE_PIN AH26 [get_ports {hdmi_in_data_p[2]}]
+set_property PACKAGE_PIN AE28 [get_ports hdmi_in_clk_p]
+set_property PACKAGE_PIN AJ28 [get_ports hdmi_in_ddc_scl_io]
+set_property PACKAGE_PIN AJ29 [get_ports hdmi_in_ddc_sda_io]
