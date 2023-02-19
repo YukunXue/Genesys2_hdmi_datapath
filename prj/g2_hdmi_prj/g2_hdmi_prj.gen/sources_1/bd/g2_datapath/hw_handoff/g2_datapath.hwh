@@ -1,39 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Feb 18 11:49:37 2023" VIVADOVERSION="2021.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Feb 19 20:58:13 2023" VIVADOVERSION="2021.2">
 
   <SYSTEMINFO ARCH="kintex7" BOARD="digilentinc.com:genesys2:part0:1.1" DEVICE="7k325t" NAME="g2_datapath" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
   <EXTERNALPORTS>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_diff_clock_clk_n" SIGIS="clk" SIGNAME="clk_wiz_0_clk_in1_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_diff_clock_clk_p" SIGIS="clk" SIGNAME="clk_wiz_0_clk_in1_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="hdmi_in_clk_p" SIGIS="clk" SIGNAME="dvi2rgb_0_TMDS_Clk_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="TMDS_Clk_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="hdmi_in_clk_n" SIGIS="clk" SIGNAME="dvi2rgb_0_TMDS_Clk_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="TMDS_Clk_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="2" NAME="hdmi_in_data_p" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_TMDS_Data_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="TMDS_Data_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="2" NAME="hdmi_in_data_n" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_TMDS_Data_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="TMDS_Data_n"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="I" NAME="hdmi_in_ddc_scl_i" SIGIS="undef" SIGNAME="dvi2rgb_0_SCL_I">
       <CONNECTIONS>
         <CONNECTION INSTANCE="dvi2rgb_0" PORT="SCL_I"/>
@@ -64,6 +34,26 @@
         <CONNECTION INSTANCE="dvi2rgb_0" PORT="SDA_T"/>
       </CONNECTIONS>
     </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="hdmi_in_clk_p" SIGIS="clk" SIGNAME="dvi2rgb_0_TMDS_Clk_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dvi2rgb_0" PORT="TMDS_Clk_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="hdmi_in_clk_n" SIGIS="clk" SIGNAME="dvi2rgb_0_TMDS_Clk_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dvi2rgb_0" PORT="TMDS_Clk_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="2" NAME="hdmi_in_data_p" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_TMDS_Data_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dvi2rgb_0" PORT="TMDS_Data_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="2" NAME="hdmi_in_data_n" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_TMDS_Data_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dvi2rgb_0" PORT="TMDS_Data_n"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="O" NAME="hdmi_out_clk_p" SIGIS="clk" SIGNAME="rgb2dvi_0_TMDS_Clk_p">
       <CONNECTIONS>
         <CONNECTION INSTANCE="rgb2dvi_0" PORT="TMDS_Clk_p"/>
@@ -84,9 +74,22 @@
         <CONNECTION INSTANCE="rgb2dvi_0" PORT="TMDS_Data_n"/>
       </CONNECTIONS>
     </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_diff_clock_clk_n" SIGIS="clk" SIGNAME="clk_wiz_0_clk_in1_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_diff_clock_clk_p" SIGIS="clk" SIGNAME="clk_wiz_0_clk_in1_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1_p"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_reset">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="reset_inv_0" PORT="Op1"/>
+        <CONNECTION INSTANCE="clk_wiz_0" PORT="resetn"/>
+        <CONNECTION INSTANCE="dvi2rgb_0" PORT="aRst_n"/>
+        <CONNECTION INSTANCE="dvi2rgb_0" PORT="pRst_n"/>
+        <CONNECTION INSTANCE="rgb2dvi_0" PORT="aRst_n"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -187,7 +190,7 @@
         <PARAMETER NAME="C_SECONDARY_SOURCE" VALUE="Single_ended_clock_capable_pin"/>
         <PARAMETER NAME="C_CLKFB_IN_SIGNALING" VALUE="SINGLE"/>
         <PARAMETER NAME="C_USE_RESET" VALUE="1"/>
-        <PARAMETER NAME="C_RESET_LOW" VALUE="0"/>
+        <PARAMETER NAME="C_RESET_LOW" VALUE="1"/>
         <PARAMETER NAME="C_USE_LOCKED" VALUE="1"/>
         <PARAMETER NAME="C_USE_INCLK_STOPPED" VALUE="0"/>
         <PARAMETER NAME="C_USE_CLKFB_STOPPED" VALUE="0"/>
@@ -346,7 +349,7 @@
         <PARAMETER NAME="C_CLK_OUT5_PORT" VALUE="clk_out5"/>
         <PARAMETER NAME="C_CLK_OUT6_PORT" VALUE="clk_out6"/>
         <PARAMETER NAME="C_CLK_OUT7_PORT" VALUE="clk_out7"/>
-        <PARAMETER NAME="C_RESET_PORT" VALUE="reset"/>
+        <PARAMETER NAME="C_RESET_PORT" VALUE="resetn"/>
         <PARAMETER NAME="C_LOCKED_PORT" VALUE="locked"/>
         <PARAMETER NAME="C_CLKFB_IN_PORT" VALUE="clkfb_in"/>
         <PARAMETER NAME="C_CLKFB_IN_P_PORT" VALUE="clkfb_in_p"/>
@@ -584,7 +587,7 @@
         <PARAMETER NAME="USE_CLK_VALID" VALUE="false"/>
         <PARAMETER NAME="USE_INCLK_STOPPED" VALUE="false"/>
         <PARAMETER NAME="USE_CLKFB_STOPPED" VALUE="false"/>
-        <PARAMETER NAME="RESET_PORT" VALUE="reset"/>
+        <PARAMETER NAME="RESET_PORT" VALUE="resetn"/>
         <PARAMETER NAME="LOCKED_PORT" VALUE="locked"/>
         <PARAMETER NAME="POWER_DOWN_PORT" VALUE="power_down"/>
         <PARAMETER NAME="CLK_VALID_PORT" VALUE="CLK_VALID"/>
@@ -666,7 +669,7 @@
         <PARAMETER NAME="PLL_CLKOUT5_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="PLL_CLKOUT5_DUTY_CYCLE" VALUE="0.500"/>
         <PARAMETER NAME="PLL_CLKOUT5_PHASE" VALUE="0.000"/>
-        <PARAMETER NAME="RESET_TYPE" VALUE="ACTIVE_HIGH"/>
+        <PARAMETER NAME="RESET_TYPE" VALUE="ACTIVE_LOW"/>
         <PARAMETER NAME="USE_SAFE_CLOCK_STARTUP" VALUE="false"/>
         <PARAMETER NAME="USE_CLOCK_SEQUENCING" VALUE="false"/>
         <PARAMETER NAME="CLKOUT1_SEQUENCE_NUMBER" VALUE="1"/>
@@ -719,9 +722,9 @@
             <CONNECTION INSTANCE="g2_datapath_imp" PORT="sys_diff_clock_clk_n"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="reset_inv_0_Res">
+        <PORT DIR="I" NAME="resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_inv_0" PORT="Res"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="200000000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
@@ -748,7 +751,7 @@
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="kEmulateDDC" VALUE="true"/>
-        <PARAMETER NAME="kRstActiveHigh" VALUE="true"/>
+        <PARAMETER NAME="kRstActiveHigh" VALUE="false"/>
         <PARAMETER NAME="kClkRange" VALUE="2"/>
         <PARAMETER NAME="kIDLY_TapValuePs" VALUE="78"/>
         <PARAMETER NAME="kIDLY_TapWidth" VALUE="5"/>
@@ -787,9 +790,9 @@
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="aRst" POLARITY="ACTIVE_HIGH" SIGIS="undef" SIGNAME="reset_inv_0_Res">
+        <PORT DIR="I" NAME="aRst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_inv_0" PORT="Res"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="23" NAME="vid_pData" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_vid_pData">
@@ -849,9 +852,9 @@
             <CONNECTION INSTANCE="g2_datapath_imp" PORT="hdmi_in_ddc_scl_t"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="pRst" POLARITY="ACTIVE_HIGH" SIGIS="undef" SIGNAME="reset_inv_0_Res">
+        <PORT DIR="I" NAME="pRst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_inv_0" PORT="Res"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -884,32 +887,6 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/reset_inv_0" HWVERSION="2.0" INSTANCE="reset_inv_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="C_OPERATION" VALUE="not"/>
-        <PARAMETER NAME="C_SIZE" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="g2_datapath_reset_inv_0_0"/>
-        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_notgate.png"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_reset">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Res" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="undef" SIGNAME="reset_inv_0_Res">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clk_wiz_0" PORT="reset"/>
-            <CONNECTION INSTANCE="dvi2rgb_0" PORT="aRst"/>
-            <CONNECTION INSTANCE="dvi2rgb_0" PORT="pRst"/>
-            <CONNECTION INSTANCE="rgb2dvi_0" PORT="aRst"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
     <MODULE COREREVISION="8" FULLNAME="/rgb2dvi_0" HWVERSION="1.4" INSTANCE="rgb2dvi_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="rgb2dvi" VLNV="digilentinc.com:ip:rgb2dvi:1.4">
       <DOCUMENTS>
         <DOCUMENT SOURCE="e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/vivado_library/ip/rgb2dvi/docs/rgb2dvi.pdf"/>
@@ -917,7 +894,7 @@
       <PARAMETERS>
         <PARAMETER NAME="kGenerateSerialClk" VALUE="true"/>
         <PARAMETER NAME="kClkPrimitive" VALUE="PLL"/>
-        <PARAMETER NAME="kRstActiveHigh" VALUE="true"/>
+        <PARAMETER NAME="kRstActiveHigh" VALUE="false"/>
         <PARAMETER NAME="kClkRange" VALUE="1"/>
         <PARAMETER NAME="kD0Swap" VALUE="false"/>
         <PARAMETER NAME="kD1Swap" VALUE="false"/>
@@ -948,9 +925,9 @@
             <CONNECTION INSTANCE="g2_datapath_imp" PORT="hdmi_out_data_n"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="aRst" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="reset_inv_0_Res">
+        <PORT DIR="I" NAME="aRst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="reset_inv_0" PORT="Res"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="23" NAME="vid_pData" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_vid_pData">

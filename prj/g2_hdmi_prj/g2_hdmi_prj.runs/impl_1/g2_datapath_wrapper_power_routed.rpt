@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date             : Sat Feb 18 19:41:36 2023
+| Date             : Sun Feb 19 21:00:15 2023
 | Host             : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
 | Command          : report_power -file g2_datapath_wrapper_power_routed.rpt -pb g2_datapath_wrapper_power_summary_routed.pb -rpx g2_datapath_wrapper_power_routed.rpx
 | Design           : g2_datapath_wrapper
@@ -53,8 +53,8 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.007 |        5 |       --- |             --- |
-| Slice Logic              |     0.002 |     1508 |       --- |             --- |
-|   LUT as Logic           |     0.001 |      537 |    203800 |            0.26 |
+| Slice Logic              |     0.002 |     1509 |       --- |             --- |
+|   LUT as Logic           |     0.001 |      538 |    203800 |            0.26 |
 |   Register               |    <0.001 |      633 |    407600 |            0.16 |
 |   CARRY4                 |    <0.001 |       18 |     50950 |            0.04 |
 |   BUFG                   |    <0.001 |        4 |        32 |           12.50 |
@@ -62,7 +62,7 @@ Table of Contents
 |   Others                 |    <0.001 |       97 |       --- |             --- |
 |   F7/F8 Muxes            |    <0.001 |       24 |    203800 |            0.01 |
 |   BUFR                   |     0.000 |        1 |       208 |            0.48 |
-| Signals                  |     0.001 |     1062 |       --- |             --- |
+| Signals                  |     0.001 |     1061 |       --- |             --- |
 | MMCM                     |     0.166 |        2 |        10 |           20.00 |
 | PLL                      |     0.054 |        1 |        10 |           10.00 |
 | I/O                      |     0.167 |       21 |       500 |            4.20 |
@@ -77,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.086 |       0.016 |      0.070 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.085 |       0.015 |      0.070 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.168 |       0.139 |      0.028 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.041 |       0.040 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -153,8 +153,8 @@ Table of Contents
 |   g2_datapath_i     |     0.397 |
 |     clk_wiz_0       |     0.114 |
 |       inst          |     0.114 |
-|     dvi2rgb_0       |     0.098 |
-|       U0            |     0.098 |
+|     dvi2rgb_0       |     0.097 |
+|       U0            |     0.097 |
 |     rgb2dvi_0       |     0.186 |
 |       U0            |     0.186 |
 +---------------------+-----------+

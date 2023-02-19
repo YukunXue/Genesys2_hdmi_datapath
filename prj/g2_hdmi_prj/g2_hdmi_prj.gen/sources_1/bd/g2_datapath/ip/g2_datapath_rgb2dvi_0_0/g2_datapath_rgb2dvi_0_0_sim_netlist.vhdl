@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
--- Date        : Sat Feb 18 11:50:28 2023
+-- Date        : Sun Feb 19 20:58:46 2023
 -- Host        : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_rgb2dvi_0_0/g2_datapath_rgb2dvi_0_0_sim_netlist.vhdl
@@ -4616,7 +4616,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity g2_datapath_rgb2dvi_0_0_ResetBridge_5 is
   port (
     AR : out STD_LOGIC_VECTOR ( 0 to 0 );
-    aRst : in STD_LOGIC;
+    aRst_n : in STD_LOGIC;
     \oSyncStages_reg[0]\ : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -4624,16 +4624,23 @@ entity g2_datapath_rgb2dvi_0_0_ResetBridge_5 is
 end g2_datapath_rgb2dvi_0_0_ResetBridge_5;
 
 architecture STRUCTURE of g2_datapath_rgb2dvi_0_0_ResetBridge_5 is
-  signal aRst_int : STD_LOGIC;
+  signal aRst_int_0 : STD_LOGIC;
   attribute RTL_KEEP : string;
-  attribute RTL_KEEP of aRst_int : signal is "true";
+  attribute RTL_KEEP of aRst_int_0 : signal is "true";
 begin
-  aRst_int <= aRst;
 SyncAsyncx: entity work.g2_datapath_rgb2dvi_0_0_SyncAsync_6
      port map (
       AR(0) => AR(0),
-      AS(0) => aRst_int,
+      AS(0) => aRst_int_0,
       \oSyncStages_reg[0]_0\ => \oSyncStages_reg[0]\
+    );
+aRst_int_inferred_i_1: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => aRst_n,
+      O => aRst_int_0
     );
 end STRUCTURE;
 library IEEE;
@@ -4645,8 +4652,8 @@ entity g2_datapath_rgb2dvi_0_0_ClockGen is
     SerialClk : out STD_LOGIC;
     PixelClk : out STD_LOGIC;
     in0 : out STD_LOGIC;
-    aRst : in STD_LOGIC;
-    \oSyncStages_reg[0]\ : in STD_LOGIC
+    \oSyncStages_reg[0]\ : in STD_LOGIC;
+    aRst_n : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of g2_datapath_rgb2dvi_0_0_ClockGen : entity is "ClockGen";
@@ -4731,7 +4738,7 @@ begin
 LockLostReset: entity work.g2_datapath_rgb2dvi_0_0_ResetBridge_5
      port map (
       AR(0) => pRst,
-      aRst => aRst,
+      aRst_n => aRst_n,
       \oSyncStages_reg[0]\ => \oSyncStages_reg[0]\
     );
 PLL_LockSyncAsync: entity work.\g2_datapath_rgb2dvi_0_0_SyncAsync__parameterized1\
@@ -4740,7 +4747,7 @@ PLL_LockSyncAsync: entity work.\g2_datapath_rgb2dvi_0_0_SyncAsync__parameterized
       \oSyncStages_reg[0]_0\ => \oSyncStages_reg[0]\,
       \oSyncStages_reg[0]_1\(0) => aPixelClkLckd
     );
-aRst_int_inferred_i_1: unisim.vcomponents.LUT1
+\aRst_int_inferred_i_1__0\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
@@ -4836,7 +4843,7 @@ entity g2_datapath_rgb2dvi_0_0_rgb2dvi is
   attribute kGenerateSerialClk : string;
   attribute kGenerateSerialClk of g2_datapath_rgb2dvi_0_0_rgb2dvi : entity is "TRUE";
   attribute kRstActiveHigh : string;
-  attribute kRstActiveHigh of g2_datapath_rgb2dvi_0_0_rgb2dvi : entity is "TRUE";
+  attribute kRstActiveHigh of g2_datapath_rgb2dvi_0_0_rgb2dvi : entity is "FALSE";
 end g2_datapath_rgb2dvi_0_0_rgb2dvi;
 
 architecture STRUCTURE of g2_datapath_rgb2dvi_0_0_rgb2dvi is
@@ -4853,7 +4860,7 @@ begin
      port map (
       PixelClk => PixelClkIO,
       SerialClk => SerialClkIO,
-      aRst => aRst,
+      aRst_n => aRst_n,
       in0 => aRstLck,
       \oSyncStages_reg[0]\ => PixelClk
     );
@@ -4933,7 +4940,7 @@ entity g2_datapath_rgb2dvi_0_0 is
     TMDS_Clk_n : out STD_LOGIC;
     TMDS_Data_p : out STD_LOGIC_VECTOR ( 2 downto 0 );
     TMDS_Data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    aRst : in STD_LOGIC;
+    aRst_n : in STD_LOGIC;
     vid_pData : in STD_LOGIC_VECTOR ( 23 downto 0 );
     vid_pVDE : in STD_LOGIC;
     vid_pHSync : in STD_LOGIC;
@@ -4966,7 +4973,7 @@ architecture STRUCTURE of g2_datapath_rgb2dvi_0_0 is
   attribute kGenerateSerialClk : string;
   attribute kGenerateSerialClk of U0 : label is "TRUE";
   attribute kRstActiveHigh : string;
-  attribute kRstActiveHigh of U0 : label is "TRUE";
+  attribute kRstActiveHigh of U0 : label is "FALSE";
   attribute x_interface_info : string;
   attribute x_interface_info of PixelClk : signal is "xilinx.com:signal:clock:1.0 PixelClk CLK";
   attribute x_interface_parameter : string;
@@ -4975,8 +4982,8 @@ architecture STRUCTURE of g2_datapath_rgb2dvi_0_0 is
   attribute x_interface_parameter of TMDS_Clk_n : signal is "XIL_INTERFACENAME TMDS_Clk_n, ASSOCIATED_RESET aRst_n, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
   attribute x_interface_info of TMDS_Clk_p : signal is "digilentinc.com:interface:tmds:1.0 TMDS CLK_P, xilinx.com:signal:clock:1.0 TMDS_Clk_p CLK";
   attribute x_interface_parameter of TMDS_Clk_p : signal is "XIL_INTERFACENAME TMDS, BOARD.ASSOCIATED_PARAM TMDS_BOARD_INTERFACE, XIL_INTERFACENAME TMDS_Clk_p, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
-  attribute x_interface_info of aRst : signal is "xilinx.com:signal:reset:1.0 AsyncRst RST";
-  attribute x_interface_parameter of aRst : signal is "XIL_INTERFACENAME AsyncRst, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
+  attribute x_interface_info of aRst_n : signal is "xilinx.com:signal:reset:1.0 AsyncRst_n RST";
+  attribute x_interface_parameter of aRst_n : signal is "XIL_INTERFACENAME AsyncRst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of vid_pHSync : signal is "xilinx.com:interface:vid_io:1.0 RGB HSYNC";
   attribute x_interface_info of vid_pVDE : signal is "xilinx.com:interface:vid_io:1.0 RGB ACTIVE_VIDEO";
   attribute x_interface_info of vid_pVSync : signal is "xilinx.com:interface:vid_io:1.0 RGB VSYNC";
@@ -4992,8 +4999,8 @@ U0: entity work.g2_datapath_rgb2dvi_0_0_rgb2dvi
       TMDS_Clk_p => TMDS_Clk_p,
       TMDS_Data_n(2 downto 0) => TMDS_Data_n(2 downto 0),
       TMDS_Data_p(2 downto 0) => TMDS_Data_p(2 downto 0),
-      aRst => aRst,
-      aRst_n => '1',
+      aRst => '0',
+      aRst_n => aRst_n,
       vid_pData(23 downto 0) => vid_pData(23 downto 0),
       vid_pHSync => vid_pHSync,
       vid_pVDE => vid_pVDE,

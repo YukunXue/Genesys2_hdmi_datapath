@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Sat Feb 18 11:50:44 2023
+// Date        : Sun Feb 19 20:58:58 2023
 // Host        : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/g2_datapath_dvi2rgb_0_1_sim_netlist.v
@@ -20,7 +20,7 @@ module g2_datapath_dvi2rgb_0_1
     TMDS_Data_p,
     TMDS_Data_n,
     RefClk,
-    aRst,
+    aRst_n,
     vid_pData,
     vid_pVDE,
     vid_pHSync,
@@ -34,13 +34,13 @@ module g2_datapath_dvi2rgb_0_1
     SCL_I,
     SCL_O,
     SCL_T,
-    pRst);
+    pRst_n);
   (* x_interface_info = "digilentinc.com:interface:tmds:1.0 TMDS CLK_P, xilinx.com:signal:clock:1.0 TMDS_Clk_p CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME TMDS, BOARD.ASSOCIATED_PARAM TMDS_BOARD_INTERFACE, XIL_INTERFACENAME TMDS_Clk_p, ASSOCIATED_RESET pRst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *) input TMDS_Clk_p;
   (* x_interface_info = "digilentinc.com:interface:tmds:1.0 TMDS CLK_N, xilinx.com:signal:clock:1.0 TMDS_Clk_n CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME TMDS_Clk_n, ASSOCIATED_RESET aRst_n:AsyncRst_n, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *) input TMDS_Clk_n;
   (* x_interface_info = "digilentinc.com:interface:tmds:1.0 TMDS DATA_P" *) input [2:0]TMDS_Data_p;
   (* x_interface_info = "digilentinc.com:interface:tmds:1.0 TMDS DATA_N" *) input [2:0]TMDS_Data_n;
   (* x_interface_info = "xilinx.com:signal:clock:1.0 RefClk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME RefClk, FREQ_HZ 200000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN g2_datapath_clk_wiz_0_0_clk_out1, INSERT_VIP 0" *) input RefClk;
-  input aRst;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 AsyncRst_n RST" *) (* x_interface_parameter = "XIL_INTERFACENAME AsyncRst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input aRst_n;
   (* x_interface_info = "xilinx.com:interface:vid_io:1.0 RGB DATA" *) output [23:0]vid_pData;
   (* x_interface_info = "xilinx.com:interface:vid_io:1.0 RGB ACTIVE_VIDEO" *) output vid_pVDE;
   (* x_interface_info = "xilinx.com:interface:vid_io:1.0 RGB HSYNC" *) output vid_pHSync;
@@ -54,7 +54,7 @@ module g2_datapath_dvi2rgb_0_1
   (* x_interface_info = "xilinx.com:interface:iic:1.0 DDC SCL_I" *) input SCL_I;
   (* x_interface_info = "xilinx.com:interface:iic:1.0 DDC SCL_O" *) output SCL_O;
   (* x_interface_info = "xilinx.com:interface:iic:1.0 DDC SCL_T" *) output SCL_T;
-  input pRst;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 SyncRst_n RST" *) (* x_interface_parameter = "XIL_INTERFACENAME SyncRst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input pRst_n;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -68,9 +68,9 @@ module g2_datapath_dvi2rgb_0_1
   (* DIFF_TERM = 0 *) (* IBUF_LOW_PWR *) (* IOSTANDARD = "TMDS_33" *) wire [2:0]TMDS_Data_n;
   (* DIFF_TERM = 0 *) (* IBUF_LOW_PWR *) (* IOSTANDARD = "TMDS_33" *) wire [2:0]TMDS_Data_p;
   wire aPixelClkLckd;
-  wire aRst;
+  wire aRst_n;
   wire pLocked;
-  wire pRst;
+  wire pRst_n;
   wire [23:0]vid_pData;
   wire vid_pHSync;
   wire vid_pVDE;
@@ -92,7 +92,7 @@ module g2_datapath_dvi2rgb_0_1
   (* kEmulateDDC = "TRUE" *) 
   (* kIDLY_TapValuePs = "78" *) 
   (* kIDLY_TapWidth = "5" *) 
-  (* kRstActiveHigh = "TRUE" *) 
+  (* kRstActiveHigh = "FALSE" *) 
   g2_datapath_dvi2rgb_0_1_dvi2rgb U0
        (.PixelClk(PixelClk),
         .RefClk(RefClk),
@@ -108,11 +108,11 @@ module g2_datapath_dvi2rgb_0_1
         .TMDS_Data_n(TMDS_Data_n),
         .TMDS_Data_p(TMDS_Data_p),
         .aPixelClkLckd(aPixelClkLckd),
-        .aRst(aRst),
-        .aRst_n(1'b1),
+        .aRst(1'b0),
+        .aRst_n(aRst_n),
         .pLocked(pLocked),
-        .pRst(pRst),
-        .pRst_n(1'b1),
+        .pRst(1'b0),
+        .pRst_n(pRst_n),
         .vid_pData(vid_pData),
         .vid_pHSync(vid_pHSync),
         .vid_pVDE(vid_pVDE),
@@ -6948,21 +6948,26 @@ endmodule
 (* ORIG_REF_NAME = "ResetBridge" *) 
 module g2_datapath_dvi2rgb_0_1_ResetBridge_2
    (SS,
-    aRst,
+    aRst_n,
     RefClk);
   output [0:0]SS;
-  input aRst;
+  input aRst_n;
   input RefClk;
 
   wire RefClk;
   wire [0:0]SS;
-  (* RTL_KEEP = "true" *) wire aRst_int;
+  (* RTL_KEEP = "true" *) wire aRst_int_0;
+  wire aRst_n;
 
-  assign aRst_int = aRst;
   g2_datapath_dvi2rgb_0_1_SyncAsync_4 SyncAsyncx
-       (.AS(aRst_int),
+       (.AS(aRst_int_0),
         .RefClk(RefClk),
         .SS(SS));
+  LUT1 #(
+    .INIT(2'h1)) 
+    aRst_int_inferred_i_1__1
+       (.I0(aRst_n),
+        .O(aRst_int_0));
 endmodule
 
 (* ORIG_REF_NAME = "ResetBridge" *) 
@@ -8142,18 +8147,18 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Clocking
     PixelClkBuffer_0,
     aPixelClkLckd,
     in0,
-    aRst,
     RefClk,
     TMDS_Clk_p,
-    TMDS_Clk_n);
+    TMDS_Clk_n,
+    aRst_n);
   output SerialClkBuffer_0;
   output PixelClkBuffer_0;
   output aPixelClkLckd;
   output in0;
-  input aRst;
   input RefClk;
   input TMDS_Clk_p;
   input TMDS_Clk_n;
+  input aRst_n;
 
   wire CLKFBIN;
   wire CLK_IN_hdmi_clk;
@@ -8168,7 +8173,7 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Clocking
   wire aDlyLckd;
   wire aMMCM_Locked;
   wire aPixelClkLckd;
-  wire aRst;
+  wire aRst_n;
   wire in0;
   wire p_0_in;
   wire [0:0]rDlyRstCnt0;
@@ -8308,7 +8313,7 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Clocking
   g2_datapath_dvi2rgb_0_1_ResetBridge_2 LockLostReset
        (.RefClk(RefClk),
         .SS(rLockLostRst),
-        .aRst(aRst));
+        .aRst_n(aRst_n));
   g2_datapath_dvi2rgb_0_1_SyncAsync__parameterized0 MMCM_LockSync
        (.D(MMCM_LockSync_n_0),
         .Q(p_0_in),
@@ -8511,7 +8516,7 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Decoder
     pVld_1,
     pRdy_1,
     pRdy_2,
-    pRst);
+    pRst_n);
   output pAllVld;
   output pAllVldBgnFlag;
   output pVde_reg_0;
@@ -8532,7 +8537,7 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Decoder
   input pVld_1;
   input pRdy_1;
   input pRdy_2;
-  input pRst;
+  input pRst_n;
 
   wire [0:0]AS;
   wire CLK;
@@ -8581,7 +8586,7 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Decoder
   wire pRdy_0;
   wire pRdy_1;
   wire pRdy_2;
-  wire pRst;
+  wire pRst_n;
   wire pTimeoutOvf;
   wire pVde_reg_0;
   wire pVld_0;
@@ -8711,10 +8716,10 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Decoder
         .Q(pAlignErr_q),
         .R(1'b0));
   LUT5 #(
-    .INIT(32'hFFFEEEEE)) 
+    .INIT(32'hFFFDDDDD)) 
     pAlignRst_i_1__1
-       (.I0(pBitslip_reg_n_0),
-        .I1(pRst),
+       (.I0(pRst_n),
+        .I1(pBitslip_reg_n_0),
         .I2(pBitslipCnt[1]),
         .I3(pBitslipCnt[0]),
         .I4(pAlignRst_reg_n_0),
@@ -9056,7 +9061,7 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Decoder_0
     pRdy_2,
     pRdy_0,
     pAllVldBgnFlag,
-    pRst,
+    pRst_n,
     pAllVld);
   output pAligned_reg;
   output pVld_1;
@@ -9074,7 +9079,7 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Decoder_0
   input pRdy_2;
   input pRdy_0;
   input pAllVldBgnFlag;
-  input pRst;
+  input pRst_n;
   input pAllVld;
 
   wire [0:0]AS;
@@ -9117,7 +9122,7 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Decoder_0
   wire pRdy_0;
   wire pRdy_1;
   wire pRdy_2;
-  wire pRst;
+  wire pRst_n;
   wire pTimeoutOvf;
   wire pVld_0;
   wire pVld_1;
@@ -9237,10 +9242,10 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Decoder_0
         .Q(pAlignErr_q),
         .R(1'b0));
   LUT5 #(
-    .INIT(32'hFFFEEEEE)) 
+    .INIT(32'hFFFDDDDD)) 
     pAlignRst_i_1__0
-       (.I0(pBitslip_reg_n_0),
-        .I1(pRst),
+       (.I0(pRst_n),
+        .I1(pBitslip_reg_n_0),
         .I2(pBitslipCnt[1]),
         .I3(pBitslipCnt[0]),
         .I4(pAlignRst_reg_n_0),
@@ -9562,7 +9567,7 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Decoder_1
     pRdy_0,
     pRdy_1,
     pAllVldBgnFlag,
-    pRst,
+    pRst_n,
     pAllVld);
   output pVld_2;
   output pRdy_2;
@@ -9578,7 +9583,7 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Decoder_1
   input pRdy_0;
   input pRdy_1;
   input pAllVldBgnFlag;
-  input pRst;
+  input pRst_n;
   input pAllVld;
 
   wire CLK;
@@ -9621,7 +9626,7 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Decoder_1
   wire pRdy_0;
   wire pRdy_1;
   wire pRdy_2;
-  wire pRst;
+  wire pRst_n;
   wire pTimeoutOvf;
   wire pVld_2;
   wire \rTimeoutCnt[0]_i_3_n_0 ;
@@ -9736,10 +9741,10 @@ module g2_datapath_dvi2rgb_0_1_TMDS_Decoder_1
         .Q(pAlignErr_q),
         .R(1'b0));
   LUT5 #(
-    .INIT(32'hFFFEEEEE)) 
+    .INIT(32'hFFFDDDDD)) 
     pAlignRst_i_1
-       (.I0(pBitslip_reg_n_0),
-        .I1(pRst),
+       (.I0(pRst_n),
+        .I1(pBitslip_reg_n_0),
         .I2(pBitslipCnt[1]),
         .I3(pBitslipCnt[0]),
         .I4(pAlignRst_reg_n_0),
@@ -10829,7 +10834,7 @@ endmodule
 
 (* ORIG_REF_NAME = "dvi2rgb" *) (* kAddBUFG = "TRUE" *) (* kClkRange = "2" *) 
 (* kDebug = "FALSE" *) (* kEdidFileName = "dgl_720p_cea.data" *) (* kEmulateDDC = "TRUE" *) 
-(* kIDLY_TapValuePs = "78" *) (* kIDLY_TapWidth = "5" *) (* kRstActiveHigh = "TRUE" *) 
+(* kIDLY_TapValuePs = "78" *) (* kIDLY_TapWidth = "5" *) (* kRstActiveHigh = "FALSE" *) 
 module g2_datapath_dvi2rgb_0_1_dvi2rgb
    (TMDS_Clk_p,
     TMDS_Clk_n,
@@ -10897,7 +10902,7 @@ module g2_datapath_dvi2rgb_0_1_dvi2rgb
   wire [2:0]TMDS_Data_n;
   wire [2:0]TMDS_Data_p;
   wire aPixelClkLckd;
-  wire aRst;
+  wire aRst_n;
   wire pAllVld;
   wire [23:0]pData;
   wire pLockLostRst;
@@ -10905,7 +10910,7 @@ module g2_datapath_dvi2rgb_0_1_dvi2rgb
   wire pRdy_0;
   wire pRdy_1;
   wire pRdy_2;
-  wire pRst;
+  wire pRst_n;
   wire pVld_0;
   wire pVld_1;
   wire pVld_2;
@@ -10935,7 +10940,7 @@ module g2_datapath_dvi2rgb_0_1_dvi2rgb
         .pRdy_0(pRdy_0),
         .pRdy_1(pRdy_1),
         .pRdy_2(pRdy_2),
-        .pRst(pRst),
+        .pRst_n(pRst_n),
         .pVde_reg_0(\DataDecoders[0].DecoderX_n_2 ),
         .pVld_0(pVld_0),
         .pVld_1(pVld_1),
@@ -10955,7 +10960,7 @@ module g2_datapath_dvi2rgb_0_1_dvi2rgb
         .pRdy_0(pRdy_0),
         .pRdy_1(pRdy_1),
         .pRdy_2(pRdy_2),
-        .pRst(pRst),
+        .pRst_n(pRst_n),
         .pVld_0(pVld_0),
         .pVld_1(pVld_1),
         .pVld_2(pVld_2));
@@ -10974,7 +10979,7 @@ module g2_datapath_dvi2rgb_0_1_dvi2rgb
         .pRdy_0(pRdy_0),
         .pRdy_1(pRdy_1),
         .pRdy_2(pRdy_2),
-        .pRst(pRst),
+        .pRst_n(pRst_n),
         .pVld_2(pVld_2));
   GND GND
        (.G(\<const0> ));
@@ -11009,7 +11014,7 @@ module g2_datapath_dvi2rgb_0_1_dvi2rgb
         .TMDS_Clk_n(TMDS_Clk_n),
         .TMDS_Clk_p(TMDS_Clk_p),
         .aPixelClkLckd(aPixelClkLckd),
-        .aRst(aRst),
+        .aRst_n(aRst_n),
         .in0(TMDS_ClockingX_n_3));
 endmodule
 `ifndef GLBL

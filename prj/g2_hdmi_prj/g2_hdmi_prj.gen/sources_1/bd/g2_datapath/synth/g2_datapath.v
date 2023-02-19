@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-//Date        : Sat Feb 18 11:49:32 2023
+//Date        : Sun Feb 19 20:58:12 2023
 //Host        : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
 //Command     : generate_target g2_datapath.bd
 //Design      : g2_datapath
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "g2_datapath,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=g2_datapath,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=4,numReposBlks=4,numNonXlnxBlks=2,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_board_cnt=1,da_clkrst_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "g2_datapath.hwdef" *) 
+(* CORE_GENERATION_INFO = "g2_datapath,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=g2_datapath,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=3,numReposBlks=3,numNonXlnxBlks=2,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_board_cnt=3,da_clkrst_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "g2_datapath.hwdef" *) 
 module g2_datapath
    (hdmi_in_clk_n,
     hdmi_in_clk_p,
@@ -63,7 +63,6 @@ module g2_datapath
   wire [2:0]hdmi_in_1_DATA_N;
   wire [2:0]hdmi_in_1_DATA_P;
   wire reset_1;
-  wire [0:0]reset_inv_0_Res;
   wire rgb2dvi_0_TMDS_CLK_N;
   wire rgb2dvi_0_TMDS_CLK_P;
   wire [2:0]rgb2dvi_0_TMDS_DATA_N;
@@ -92,7 +91,7 @@ module g2_datapath
        (.clk_in1_n(sys_diff_clock_1_CLK_N),
         .clk_in1_p(sys_diff_clock_1_CLK_P),
         .clk_out1(clk_wiz_0_clk_out1),
-        .reset(reset_inv_0_Res));
+        .resetn(reset_1));
   g2_datapath_dvi2rgb_0_1 dvi2rgb_0
        (.PixelClk(dvi2rgb_0_PixelClk),
         .RefClk(clk_wiz_0_clk_out1),
@@ -106,22 +105,19 @@ module g2_datapath
         .TMDS_Clk_p(hdmi_in_1_CLK_P),
         .TMDS_Data_n(hdmi_in_1_DATA_N),
         .TMDS_Data_p(hdmi_in_1_DATA_P),
-        .aRst(reset_inv_0_Res),
-        .pRst(reset_inv_0_Res),
+        .aRst_n(reset_1),
+        .pRst_n(reset_1),
         .vid_pData(dvi2rgb_0_RGB_DATA),
         .vid_pHSync(dvi2rgb_0_RGB_HSYNC),
         .vid_pVDE(dvi2rgb_0_RGB_ACTIVE_VIDEO),
         .vid_pVSync(dvi2rgb_0_RGB_VSYNC));
-  g2_datapath_reset_inv_0_0 reset_inv_0
-       (.Op1(reset_1),
-        .Res(reset_inv_0_Res));
   g2_datapath_rgb2dvi_0_0 rgb2dvi_0
        (.PixelClk(dvi2rgb_0_PixelClk),
         .TMDS_Clk_n(rgb2dvi_0_TMDS_CLK_N),
         .TMDS_Clk_p(rgb2dvi_0_TMDS_CLK_P),
         .TMDS_Data_n(rgb2dvi_0_TMDS_DATA_N),
         .TMDS_Data_p(rgb2dvi_0_TMDS_DATA_P),
-        .aRst(reset_inv_0_Res),
+        .aRst_n(reset_1),
         .vid_pData(dvi2rgb_0_RGB_DATA),
         .vid_pHSync(dvi2rgb_0_RGB_HSYNC),
         .vid_pVDE(dvi2rgb_0_RGB_ACTIVE_VIDEO),

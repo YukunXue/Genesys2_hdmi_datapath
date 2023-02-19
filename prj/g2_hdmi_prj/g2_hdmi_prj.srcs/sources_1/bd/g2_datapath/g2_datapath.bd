@@ -13,8 +13,7 @@
     "design_tree": {
       "clk_wiz_0": "",
       "dvi2rgb_0": "",
-      "rgb2dvi_0": "",
-      "reset_inv_0": ""
+      "rgb2dvi_0": ""
     },
     "interface_ports": {
       "sys_diff_clock": {
@@ -84,6 +83,12 @@
           "RESET_BOARD_INTERFACE": {
             "value": "reset"
           },
+          "RESET_PORT": {
+            "value": "resetn"
+          },
+          "RESET_TYPE": {
+            "value": "ACTIVE_LOW"
+          },
           "USE_BOARD_FLOW": {
             "value": "true"
           }
@@ -100,6 +105,9 @@
           },
           "TMDS_BOARD_INTERFACE": {
             "value": "hdmi_in"
+          },
+          "kRstActiveHigh": {
+            "value": "false"
           }
         }
       },
@@ -111,20 +119,9 @@
         "parameters": {
           "TMDS_BOARD_INTERFACE": {
             "value": "hdmi_out"
-          }
-        }
-      },
-      "reset_inv_0": {
-        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "g2_datapath_reset_inv_0_0",
-        "xci_path": "ip\\g2_datapath_reset_inv_0_0\\g2_datapath_reset_inv_0_0.xci",
-        "inst_hier_path": "reset_inv_0",
-        "parameters": {
-          "C_OPERATION": {
-            "value": "not"
           },
-          "C_SIZE": {
-            "value": "1"
+          "kRstActiveHigh": {
+            "value": "false"
           }
         }
       }
@@ -177,16 +174,10 @@
       "reset_1": {
         "ports": [
           "reset",
-          "reset_inv_0/Op1"
-        ]
-      },
-      "reset_inv_0_Res": {
-        "ports": [
-          "reset_inv_0/Res",
-          "clk_wiz_0/reset",
-          "dvi2rgb_0/aRst",
-          "dvi2rgb_0/pRst",
-          "rgb2dvi_0/aRst"
+          "clk_wiz_0/resetn",
+          "dvi2rgb_0/aRst_n",
+          "dvi2rgb_0/pRst_n",
+          "rgb2dvi_0/aRst_n"
         ]
       }
     }

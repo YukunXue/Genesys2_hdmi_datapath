@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
--- Date        : Sat Feb 18 11:50:44 2023
+-- Date        : Sun Feb 19 20:58:58 2023
 -- Host        : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/g2_datapath_dvi2rgb_0_1_sim_netlist.vhdl
@@ -8613,7 +8613,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity g2_datapath_dvi2rgb_0_1_ResetBridge_2 is
   port (
     SS : out STD_LOGIC_VECTOR ( 0 to 0 );
-    aRst : in STD_LOGIC;
+    aRst_n : in STD_LOGIC;
     RefClk : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -8621,16 +8621,23 @@ entity g2_datapath_dvi2rgb_0_1_ResetBridge_2 is
 end g2_datapath_dvi2rgb_0_1_ResetBridge_2;
 
 architecture STRUCTURE of g2_datapath_dvi2rgb_0_1_ResetBridge_2 is
-  signal aRst_int : STD_LOGIC;
+  signal aRst_int_0 : STD_LOGIC;
   attribute RTL_KEEP : string;
-  attribute RTL_KEEP of aRst_int : signal is "true";
+  attribute RTL_KEEP of aRst_int_0 : signal is "true";
 begin
-  aRst_int <= aRst;
 SyncAsyncx: entity work.g2_datapath_dvi2rgb_0_1_SyncAsync_4
      port map (
-      AS(0) => aRst_int,
+      AS(0) => aRst_int_0,
       RefClk => RefClk,
       SS(0) => SS(0)
+    );
+\aRst_int_inferred_i_1__1\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => aRst_n,
+      O => aRst_int_0
     );
 end STRUCTURE;
 library IEEE;
@@ -11049,10 +11056,10 @@ entity g2_datapath_dvi2rgb_0_1_TMDS_Clocking is
     PixelClkBuffer_0 : out STD_LOGIC;
     aPixelClkLckd : out STD_LOGIC;
     in0 : out STD_LOGIC;
-    aRst : in STD_LOGIC;
     RefClk : in STD_LOGIC;
     TMDS_Clk_p : in STD_LOGIC;
-    TMDS_Clk_n : in STD_LOGIC
+    TMDS_Clk_n : in STD_LOGIC;
+    aRst_n : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of g2_datapath_dvi2rgb_0_1_TMDS_Clocking : entity is "TMDS_Clocking";
@@ -11226,7 +11233,7 @@ LockLostReset: entity work.g2_datapath_dvi2rgb_0_1_ResetBridge_2
      port map (
       RefClk => RefClk,
       SS(0) => rLockLostRst,
-      aRst => aRst
+      aRst_n => aRst_n
     );
 MMCM_LockSync: entity work.\g2_datapath_dvi2rgb_0_1_SyncAsync__parameterized0\
      port map (
@@ -11494,7 +11501,7 @@ entity g2_datapath_dvi2rgb_0_1_TMDS_Decoder is
     pVld_1 : in STD_LOGIC;
     pRdy_1 : in STD_LOGIC;
     pRdy_2 : in STD_LOGIC;
-    pRst : in STD_LOGIC
+    pRst_n : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of g2_datapath_dvi2rgb_0_1_TMDS_Decoder : entity is "TMDS_Decoder";
@@ -11693,11 +11700,11 @@ pAlignErr_q_reg: unisim.vcomponents.FDRE
     );
 \pAlignRst_i_1__1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFEEEEE"
+      INIT => X"FFFDDDDD"
     )
         port map (
-      I0 => pBitslip_reg_n_0,
-      I1 => pRst,
+      I0 => pRst_n,
+      I1 => pBitslip_reg_n_0,
       I2 => pBitslipCnt(1),
       I3 => pBitslipCnt(0),
       I4 => pAlignRst_reg_n_0,
@@ -12176,7 +12183,7 @@ entity g2_datapath_dvi2rgb_0_1_TMDS_Decoder_0 is
     pRdy_2 : in STD_LOGIC;
     pRdy_0 : in STD_LOGIC;
     pAllVldBgnFlag : in STD_LOGIC;
-    pRst : in STD_LOGIC;
+    pRst_n : in STD_LOGIC;
     pAllVld : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -12358,11 +12365,11 @@ pAlignErr_q_reg: unisim.vcomponents.FDRE
     );
 \pAlignRst_i_1__0\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFEEEEE"
+      INIT => X"FFFDDDDD"
     )
         port map (
-      I0 => pBitslip_reg_n_0,
-      I1 => pRst,
+      I0 => pRst_n,
+      I1 => pBitslip_reg_n_0,
       I2 => pBitslipCnt(1),
       I3 => pBitslipCnt(0),
       I4 => pAlignRst_reg_n_0,
@@ -12815,7 +12822,7 @@ entity g2_datapath_dvi2rgb_0_1_TMDS_Decoder_1 is
     pRdy_0 : in STD_LOGIC;
     pRdy_1 : in STD_LOGIC;
     pAllVldBgnFlag : in STD_LOGIC;
-    pRst : in STD_LOGIC;
+    pRst_n : in STD_LOGIC;
     pAllVld : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -12992,11 +12999,11 @@ pAlignErr_q_reg: unisim.vcomponents.FDRE
     );
 pAlignRst_i_1: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFEEEEE"
+      INIT => X"FFFDDDDD"
     )
         port map (
-      I0 => pBitslip_reg_n_0,
-      I1 => pRst,
+      I0 => pRst_n,
+      I1 => pBitslip_reg_n_0,
       I2 => pBitslipCnt(1),
       I3 => pBitslipCnt(0),
       I4 => pAlignRst_reg_n_0,
@@ -13476,7 +13483,7 @@ entity g2_datapath_dvi2rgb_0_1_dvi2rgb is
   attribute kIDLY_TapWidth : integer;
   attribute kIDLY_TapWidth of g2_datapath_dvi2rgb_0_1_dvi2rgb : entity is 5;
   attribute kRstActiveHigh : string;
-  attribute kRstActiveHigh of g2_datapath_dvi2rgb_0_1_dvi2rgb : entity is "TRUE";
+  attribute kRstActiveHigh of g2_datapath_dvi2rgb_0_1_dvi2rgb : entity is "FALSE";
 end g2_datapath_dvi2rgb_0_1_dvi2rgb;
 
 architecture STRUCTURE of g2_datapath_dvi2rgb_0_1_dvi2rgb is
@@ -13521,7 +13528,7 @@ begin
       pRdy_0 => pRdy_0,
       pRdy_1 => pRdy_1,
       pRdy_2 => pRdy_2,
-      pRst => pRst,
+      pRst_n => pRst_n,
       pVde_reg_0 => \DataDecoders[0].DecoderX_n_2\,
       pVld_0 => pVld_0,
       pVld_1 => pVld_1,
@@ -13543,7 +13550,7 @@ begin
       pRdy_0 => pRdy_0,
       pRdy_1 => pRdy_1,
       pRdy_2 => pRdy_2,
-      pRst => pRst,
+      pRst_n => pRst_n,
       pVld_0 => pVld_0,
       pVld_1 => pVld_1,
       pVld_2 => pVld_2
@@ -13564,7 +13571,7 @@ begin
       pRdy_0 => pRdy_0,
       pRdy_1 => pRdy_1,
       pRdy_2 => pRdy_2,
-      pRst => pRst,
+      pRst_n => pRst_n,
       pVld_2 => pVld_2
     );
 GND: unisim.vcomponents.GND
@@ -13611,7 +13618,7 @@ TMDS_ClockingX: entity work.g2_datapath_dvi2rgb_0_1_TMDS_Clocking
       TMDS_Clk_n => TMDS_Clk_n,
       TMDS_Clk_p => TMDS_Clk_p,
       aPixelClkLckd => aPixelClkLckd,
-      aRst => aRst,
+      aRst_n => aRst_n,
       in0 => TMDS_ClockingX_n_3
     );
 end STRUCTURE;
@@ -13626,7 +13633,7 @@ entity g2_datapath_dvi2rgb_0_1 is
     TMDS_Data_p : in STD_LOGIC_VECTOR ( 2 downto 0 );
     TMDS_Data_n : in STD_LOGIC_VECTOR ( 2 downto 0 );
     RefClk : in STD_LOGIC;
-    aRst : in STD_LOGIC;
+    aRst_n : in STD_LOGIC;
     vid_pData : out STD_LOGIC_VECTOR ( 23 downto 0 );
     vid_pVDE : out STD_LOGIC;
     vid_pHSync : out STD_LOGIC;
@@ -13640,7 +13647,7 @@ entity g2_datapath_dvi2rgb_0_1 is
     SCL_I : in STD_LOGIC;
     SCL_O : out STD_LOGIC;
     SCL_T : out STD_LOGIC;
-    pRst : in STD_LOGIC
+    pRst_n : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of g2_datapath_dvi2rgb_0_1 : entity is true;
@@ -13674,7 +13681,7 @@ architecture STRUCTURE of g2_datapath_dvi2rgb_0_1 is
   attribute kIDLY_TapWidth : integer;
   attribute kIDLY_TapWidth of U0 : label is 5;
   attribute kRstActiveHigh : string;
-  attribute kRstActiveHigh of U0 : label is "TRUE";
+  attribute kRstActiveHigh of U0 : label is "FALSE";
   attribute x_interface_info : string;
   attribute x_interface_info of PixelClk : signal is "xilinx.com:signal:clock:1.0 PixelClk CLK";
   attribute x_interface_parameter : string;
@@ -13692,6 +13699,10 @@ architecture STRUCTURE of g2_datapath_dvi2rgb_0_1 is
   attribute x_interface_parameter of TMDS_Clk_n : signal is "XIL_INTERFACENAME TMDS_Clk_n, ASSOCIATED_RESET aRst_n:AsyncRst_n, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
   attribute x_interface_info of TMDS_Clk_p : signal is "digilentinc.com:interface:tmds:1.0 TMDS CLK_P, xilinx.com:signal:clock:1.0 TMDS_Clk_p CLK";
   attribute x_interface_parameter of TMDS_Clk_p : signal is "XIL_INTERFACENAME TMDS, BOARD.ASSOCIATED_PARAM TMDS_BOARD_INTERFACE, XIL_INTERFACENAME TMDS_Clk_p, ASSOCIATED_RESET pRst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
+  attribute x_interface_info of aRst_n : signal is "xilinx.com:signal:reset:1.0 AsyncRst_n RST";
+  attribute x_interface_parameter of aRst_n : signal is "XIL_INTERFACENAME AsyncRst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0";
+  attribute x_interface_info of pRst_n : signal is "xilinx.com:signal:reset:1.0 SyncRst_n RST";
+  attribute x_interface_parameter of pRst_n : signal is "XIL_INTERFACENAME SyncRst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of vid_pHSync : signal is "xilinx.com:interface:vid_io:1.0 RGB HSYNC";
   attribute x_interface_info of vid_pVDE : signal is "xilinx.com:interface:vid_io:1.0 RGB ACTIVE_VIDEO";
   attribute x_interface_info of vid_pVSync : signal is "xilinx.com:interface:vid_io:1.0 RGB VSYNC";
@@ -13722,11 +13733,11 @@ U0: entity work.g2_datapath_dvi2rgb_0_1_dvi2rgb
       TMDS_Data_n(2 downto 0) => TMDS_Data_n(2 downto 0),
       TMDS_Data_p(2 downto 0) => TMDS_Data_p(2 downto 0),
       aPixelClkLckd => aPixelClkLckd,
-      aRst => aRst,
-      aRst_n => '1',
+      aRst => '0',
+      aRst_n => aRst_n,
       pLocked => pLocked,
-      pRst => pRst,
-      pRst_n => '1',
+      pRst => '0',
+      pRst_n => pRst_n,
       vid_pData(23 downto 0) => vid_pData(23 downto 0),
       vid_pHSync => vid_pHSync,
       vid_pVDE => vid_pVDE,

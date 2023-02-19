@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1676720446">
+<GenRun Id="impl_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1676811494">
   <File Type="ROUTE-PWR" Name="g2_datapath_wrapper_power_routed.rpt"/>
   <File Type="PA-TCL" Name="g2_datapath_wrapper.tcl"/>
   <File Type="BITSTR-MMI" Name="g2_datapath_wrapper.mmi"/>
@@ -133,9 +133,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -151,5 +149,4 @@
   <BlockFileSet Type="BlockSrcs" Name="g2_datapath_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="g2_datapath_dvi2rgb_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="g2_datapath_rgb2dvi_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="g2_datapath_reset_inv_0_0"/>
 </GenRun>

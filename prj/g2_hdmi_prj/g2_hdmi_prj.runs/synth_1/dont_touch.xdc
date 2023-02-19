@@ -15,7 +15,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==g2_datapath
 # IP: bd/g2_datapath/ip/g2_datapath_rgb2dvi_0_0/g2_datapath_rgb2dvi_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==g2_datapath_rgb2dvi_0_0 || ORIG_REF_NAME==g2_datapath_rgb2dvi_0_0} -quiet] -quiet
 
-# IP: bd/g2_datapath/ip/g2_datapath_reset_inv_0_0/g2_datapath_reset_inv_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==g2_datapath_reset_inv_0_0 || ORIG_REF_NAME==g2_datapath_reset_inv_0_0} -quiet] -quiet
-
 # XDC: e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/g2_datapath_ooc.xdc

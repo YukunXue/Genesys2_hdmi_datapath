@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Sat Feb 18 11:50:28 2023
+// Date        : Sun Feb 19 20:58:46 2023
 // Host        : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_rgb2dvi_0_0/g2_datapath_rgb2dvi_0_0_sim_netlist.v
@@ -19,7 +19,7 @@ module g2_datapath_rgb2dvi_0_0
     TMDS_Clk_n,
     TMDS_Data_p,
     TMDS_Data_n,
-    aRst,
+    aRst_n,
     vid_pData,
     vid_pVDE,
     vid_pHSync,
@@ -29,7 +29,7 @@ module g2_datapath_rgb2dvi_0_0
   (* x_interface_info = "digilentinc.com:interface:tmds:1.0 TMDS CLK_N, xilinx.com:signal:clock:1.0 TMDS_Clk_n CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME TMDS_Clk_n, ASSOCIATED_RESET aRst_n, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *) output TMDS_Clk_n;
   (* x_interface_info = "digilentinc.com:interface:tmds:1.0 TMDS DATA_P" *) output [2:0]TMDS_Data_p;
   (* x_interface_info = "digilentinc.com:interface:tmds:1.0 TMDS DATA_N" *) output [2:0]TMDS_Data_n;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 AsyncRst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME AsyncRst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input aRst;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 AsyncRst_n RST" *) (* x_interface_parameter = "XIL_INTERFACENAME AsyncRst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input aRst_n;
   (* x_interface_info = "xilinx.com:interface:vid_io:1.0 RGB DATA" *) input [23:0]vid_pData;
   (* x_interface_info = "xilinx.com:interface:vid_io:1.0 RGB ACTIVE_VIDEO" *) input vid_pVDE;
   (* x_interface_info = "xilinx.com:interface:vid_io:1.0 RGB HSYNC" *) input vid_pHSync;
@@ -41,7 +41,7 @@ module g2_datapath_rgb2dvi_0_0
   (* IOSTANDARD = "TMDS_33" *) (* SLEW = "SLOW" *) wire TMDS_Clk_p;
   (* IOSTANDARD = "TMDS_33" *) (* SLEW = "SLOW" *) wire [2:0]TMDS_Data_n;
   (* IOSTANDARD = "TMDS_33" *) (* SLEW = "SLOW" *) wire [2:0]TMDS_Data_p;
-  wire aRst;
+  wire aRst_n;
   wire [23:0]vid_pData;
   wire vid_pHSync;
   wire vid_pVDE;
@@ -54,7 +54,7 @@ module g2_datapath_rgb2dvi_0_0
   (* kD1Swap = "FALSE" *) 
   (* kD2Swap = "FALSE" *) 
   (* kGenerateSerialClk = "TRUE" *) 
-  (* kRstActiveHigh = "TRUE" *) 
+  (* kRstActiveHigh = "FALSE" *) 
   g2_datapath_rgb2dvi_0_0_rgb2dvi U0
        (.PixelClk(PixelClk),
         .SerialClk(1'b0),
@@ -62,8 +62,8 @@ module g2_datapath_rgb2dvi_0_0
         .TMDS_Clk_p(TMDS_Clk_p),
         .TMDS_Data_n(TMDS_Data_n),
         .TMDS_Data_p(TMDS_Data_p),
-        .aRst(aRst),
-        .aRst_n(1'b1),
+        .aRst(1'b0),
+        .aRst_n(aRst_n),
         .vid_pData(vid_pData),
         .vid_pHSync(vid_pHSync),
         .vid_pVDE(vid_pVDE),
@@ -75,20 +75,20 @@ module g2_datapath_rgb2dvi_0_0_ClockGen
    (SerialClk,
     PixelClk,
     in0,
-    aRst,
-    \oSyncStages_reg[0] );
+    \oSyncStages_reg[0] ,
+    aRst_n);
   output SerialClk;
   output PixelClk;
   output in0;
-  input aRst;
   input \oSyncStages_reg[0] ;
+  input aRst_n;
 
   wire CLKFBIN;
   wire PixelClk;
   wire RST;
   wire SerialClk;
   wire aPixelClkLckd;
-  wire aRst;
+  wire aRst_n;
   wire in0;
   wire oOut;
   wire \oSyncStages_reg[0] ;
@@ -161,7 +161,7 @@ module g2_datapath_rgb2dvi_0_0_ClockGen
         .RST(RST));
   g2_datapath_rgb2dvi_0_0_ResetBridge_5 LockLostReset
        (.AR(pRst),
-        .aRst(aRst),
+        .aRst_n(aRst_n),
         .\oSyncStages_reg[0] (\oSyncStages_reg[0] ));
   g2_datapath_rgb2dvi_0_0_SyncAsync__parameterized1 PLL_LockSyncAsync
        (.D(oOut),
@@ -169,7 +169,7 @@ module g2_datapath_rgb2dvi_0_0_ClockGen
         .\oSyncStages_reg[0]_1 (aPixelClkLckd));
   LUT1 #(
     .INIT(2'h1)) 
-    aRst_int_inferred_i_1
+    aRst_int_inferred_i_1__0
        (.I0(aPixelClkLckd),
         .O(in0));
   LUT3 #(
@@ -847,21 +847,26 @@ endmodule
 (* ORIG_REF_NAME = "ResetBridge" *) 
 module g2_datapath_rgb2dvi_0_0_ResetBridge_5
    (AR,
-    aRst,
+    aRst_n,
     \oSyncStages_reg[0] );
   output [0:0]AR;
-  input aRst;
+  input aRst_n;
   input \oSyncStages_reg[0] ;
 
   wire [0:0]AR;
-  (* RTL_KEEP = "true" *) wire aRst_int;
+  (* RTL_KEEP = "true" *) wire aRst_int_0;
+  wire aRst_n;
   wire \oSyncStages_reg[0] ;
 
-  assign aRst_int = aRst;
   g2_datapath_rgb2dvi_0_0_SyncAsync_6 SyncAsyncx
        (.AR(AR),
-        .AS(aRst_int),
+        .AS(aRst_int_0),
         .\oSyncStages_reg[0]_0 (\oSyncStages_reg[0] ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    aRst_int_inferred_i_1
+       (.I0(aRst_n),
+        .O(aRst_int_0));
 endmodule
 
 (* ORIG_REF_NAME = "SyncAsync" *) 
@@ -3891,7 +3896,7 @@ endmodule
 
 (* ORIG_REF_NAME = "rgb2dvi" *) (* kClkPrimitive = "PLL" *) (* kClkRange = "1" *) 
 (* kClkSwap = "FALSE" *) (* kD0Swap = "FALSE" *) (* kD1Swap = "FALSE" *) 
-(* kD2Swap = "FALSE" *) (* kGenerateSerialClk = "TRUE" *) (* kRstActiveHigh = "TRUE" *) 
+(* kD2Swap = "FALSE" *) (* kGenerateSerialClk = "TRUE" *) (* kRstActiveHigh = "FALSE" *) 
 module g2_datapath_rgb2dvi_0_0_rgb2dvi
    (TMDS_Clk_p,
     TMDS_Clk_n,
@@ -3926,8 +3931,8 @@ module g2_datapath_rgb2dvi_0_0_rgb2dvi
   wire TMDS_Clk_p;
   wire [2:0]TMDS_Data_n;
   wire [2:0]TMDS_Data_p;
-  wire aRst;
   wire aRstLck;
+  wire aRst_n;
   wire [9:0]\pDataOutRaw[0] ;
   wire [9:0]\pDataOutRaw[1] ;
   wire [9:0]\pDataOutRaw[2] ;
@@ -3940,7 +3945,7 @@ module g2_datapath_rgb2dvi_0_0_rgb2dvi
   g2_datapath_rgb2dvi_0_0_ClockGen \ClockGenInternal.ClockGenX 
        (.PixelClk(PixelClkIO),
         .SerialClk(SerialClkIO),
-        .aRst(aRst),
+        .aRst_n(aRst_n),
         .in0(aRstLck),
         .\oSyncStages_reg[0] (PixelClk));
   g2_datapath_rgb2dvi_0_0_OutputSERDES ClockSerializer

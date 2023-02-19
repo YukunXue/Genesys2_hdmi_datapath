@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Sat Feb 18 11:50:24 2023
+// Date        : Sun Feb 19 20:58:44 2023
 // Host        : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0_sim_netlist.v
@@ -15,12 +15,12 @@
 (* NotValidForBitStream *)
 module g2_datapath_clk_wiz_0_0
    (clk_out1,
-    reset,
+    resetn,
     locked,
     clk_in1_p,
     clk_in1_n);
   output clk_out1;
-  input reset;
+  input resetn;
   output locked;
   input clk_in1_p;
   input clk_in1_n;
@@ -29,24 +29,24 @@ module g2_datapath_clk_wiz_0_0
   (* DIFF_TERM = 0 *) (* IBUF_LOW_PWR *) (* RTL_KEEP = "yes" *) wire clk_in1_p;
   wire clk_out1;
   wire locked;
-  (* RTL_KEEP = "yes" *) wire reset;
+  (* RTL_KEEP = "yes" *) wire resetn;
 
   g2_datapath_clk_wiz_0_0_clk_wiz inst
        (.clk_in1_n(clk_in1_n),
         .clk_in1_p(clk_in1_p),
         .clk_out1(clk_out1),
         .locked(locked),
-        .reset(reset));
+        .resetn(resetn));
 endmodule
 
 module g2_datapath_clk_wiz_0_0_clk_wiz
    (clk_out1,
-    reset,
+    resetn,
     locked,
     clk_in1_p,
     clk_in1_n);
   output clk_out1;
-  input reset;
+  input resetn;
   output locked;
   input clk_in1_p;
   input clk_in1_n;
@@ -59,7 +59,8 @@ module g2_datapath_clk_wiz_0_0_clk_wiz
   wire clkfbout_buf_g2_datapath_clk_wiz_0_0;
   wire clkfbout_g2_datapath_clk_wiz_0_0;
   wire locked;
-  wire reset;
+  wire reset_high;
+  wire resetn;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
@@ -178,7 +179,12 @@ module g2_datapath_clk_wiz_0_0_clk_wiz
         .PSEN(1'b0),
         .PSINCDEC(1'b0),
         .PWRDWN(1'b0),
-        .RST(reset));
+        .RST(reset_high));
+  LUT1 #(
+    .INIT(2'h1)) 
+    mmcm_adv_inst_i_1
+       (.I0(resetn),
+        .O(reset_high));
 endmodule
 `ifndef GLBL
 `define GLBL
