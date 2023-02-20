@@ -115,6 +115,9 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config  -id {[BD 41-1306]}  -suppress 
+set_msg_config  -id {[BD 41-1271]}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -146,7 +149,7 @@ OPTRACE "add files" START { }
   add_files E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.srcs/sources_1/bd/g2_datapath/g2_datapath.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/rtl/g2hdmi_xdc.xdc
+  read_xdc E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.srcs/constrs_1/new/g2_hdmi.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

@@ -31,6 +31,8 @@ Digilent 的 HDMI [使用例程](https://digilent.com/reference/programmable-log
 
 
 
+ip回环测试[参考](https://cloud.tencent.com/developer/article/1529023)
+
 
 
 ## 3.环境
@@ -46,3 +48,9 @@ vivado: 2021.2 ML enterprise
 通过摄像头HDMI接口（1280x720）获取视频源然后转接到HDMI输出
 
 ![Snipaste_2023-02-18_19-45-13](E:\g2_hdmi_datapath\Genesys2_hdmi_datapath\pic\Snipaste_2023-02-18_19-45-13.png)
+
+
+
+
+
+热插拔问题

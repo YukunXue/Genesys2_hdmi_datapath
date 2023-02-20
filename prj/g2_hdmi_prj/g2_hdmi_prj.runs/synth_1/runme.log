@@ -25,40 +25,42 @@ WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis b
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 7372
+INFO: [Synth 8-7075] Helper process launched with PID 42408
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1263.172 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1262.965 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'g2_datapath_wrapper' [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/hdl/g2_datapath_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'g2_datapath' [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/synth/g2_datapath.v:13]
-INFO: [Synth 8-6157] synthesizing module 'g2_datapath_clk_wiz_0_0' [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/.Xil/Vivado-4576-LAPTOP-NVLKKFTU/realtime/g2_datapath_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'g2_datapath_clk_wiz_0_0' (1#1) [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/.Xil/Vivado-4576-LAPTOP-NVLKKFTU/realtime/g2_datapath_clk_wiz_0_0_stub.v:5]
-WARNING: [Synth 8-7071] port 'locked' of module 'g2_datapath_clk_wiz_0_0' is unconnected for instance 'clk_wiz_0' [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/synth/g2_datapath.v:90]
-WARNING: [Synth 8-7023] instance 'clk_wiz_0' of module 'g2_datapath_clk_wiz_0_0' has 5 connections declared, but only 4 given [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/synth/g2_datapath.v:90]
-INFO: [Synth 8-6157] synthesizing module 'g2_datapath_dvi2rgb_0_1' [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/.Xil/Vivado-4576-LAPTOP-NVLKKFTU/realtime/g2_datapath_dvi2rgb_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'g2_datapath_dvi2rgb_0_1' (2#1) [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/.Xil/Vivado-4576-LAPTOP-NVLKKFTU/realtime/g2_datapath_dvi2rgb_0_1_stub.v:6]
-WARNING: [Synth 8-7071] port 'aPixelClkLckd' of module 'g2_datapath_dvi2rgb_0_1' is unconnected for instance 'dvi2rgb_0' [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/synth/g2_datapath.v:95]
-WARNING: [Synth 8-7071] port 'pLocked' of module 'g2_datapath_dvi2rgb_0_1' is unconnected for instance 'dvi2rgb_0' [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/synth/g2_datapath.v:95]
-WARNING: [Synth 8-7023] instance 'dvi2rgb_0' of module 'g2_datapath_dvi2rgb_0_1' has 20 connections declared, but only 18 given [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/synth/g2_datapath.v:95]
-INFO: [Synth 8-6157] synthesizing module 'g2_datapath_rgb2dvi_0_0' [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/.Xil/Vivado-4576-LAPTOP-NVLKKFTU/realtime/g2_datapath_rgb2dvi_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'g2_datapath_rgb2dvi_0_0' (3#1) [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/.Xil/Vivado-4576-LAPTOP-NVLKKFTU/realtime/g2_datapath_rgb2dvi_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'g2_datapath' (4#1) [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/synth/g2_datapath.v:13]
+INFO: [Synth 8-6157] synthesizing module 'g2_datapath_clk_wiz_0_0' [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/.Xil/Vivado-50788-LAPTOP-NVLKKFTU/realtime/g2_datapath_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'g2_datapath_clk_wiz_0_0' (1#1) [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/.Xil/Vivado-50788-LAPTOP-NVLKKFTU/realtime/g2_datapath_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'g2_datapath_dvi2rgb_0_1' [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/.Xil/Vivado-50788-LAPTOP-NVLKKFTU/realtime/g2_datapath_dvi2rgb_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'g2_datapath_dvi2rgb_0_1' (2#1) [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/.Xil/Vivado-50788-LAPTOP-NVLKKFTU/realtime/g2_datapath_dvi2rgb_0_1_stub.v:6]
+WARNING: [Synth 8-7071] port 'aPixelClkLckd' of module 'g2_datapath_dvi2rgb_0_1' is unconnected for instance 'dvi2rgb_0' [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/synth/g2_datapath.v:109]
+WARNING: [Synth 8-7071] port 'pLocked' of module 'g2_datapath_dvi2rgb_0_1' is unconnected for instance 'dvi2rgb_0' [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/synth/g2_datapath.v:109]
+WARNING: [Synth 8-7023] instance 'dvi2rgb_0' of module 'g2_datapath_dvi2rgb_0_1' has 20 connections declared, but only 18 given [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/synth/g2_datapath.v:109]
+INFO: [Synth 8-6157] synthesizing module 'g2_datapath_rgb2dvi_0_0' [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/.Xil/Vivado-50788-LAPTOP-NVLKKFTU/realtime/g2_datapath_rgb2dvi_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'g2_datapath_rgb2dvi_0_0' (3#1) [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/.Xil/Vivado-50788-LAPTOP-NVLKKFTU/realtime/g2_datapath_rgb2dvi_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'g2_datapath_xlconstant_0_0' [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_xlconstant_0_0/synth/g2_datapath_xlconstant_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (4#1) [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'g2_datapath_xlconstant_0_0' (5#1) [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_xlconstant_0_0/synth/g2_datapath_xlconstant_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'g2_datapath' (6#1) [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/synth/g2_datapath.v:13]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [D:/vivado2022/Vivado/2021.2/scripts/rt/data/unisim_comp.v:59735]
-INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (5#1) [D:/vivado2022/Vivado/2021.2/scripts/rt/data/unisim_comp.v:59735]
-INFO: [Synth 8-6155] done synthesizing module 'g2_datapath_wrapper' (6#1) [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/hdl/g2_datapath_wrapper.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (7#1) [D:/vivado2022/Vivado/2021.2/scripts/rt/data/unisim_comp.v:59735]
+INFO: [Synth 8-6155] done synthesizing module 'g2_datapath_wrapper' (8#1) [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/hdl/g2_datapath_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1271.914 ; gain = 8.742
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1272.145 ; gain = 9.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1271.914 ; gain = 8.742
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1272.145 ; gain = 9.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1271.914 ; gain = 8.742
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1272.145 ; gain = 9.180
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1271.914 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1272.145 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -71,37 +73,39 @@ Parsing XDC File [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_
 Finished Parsing XDC File [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/g2_datapath_dvi2rgb_0_1/g2_datapath_dvi2rgb_0_1_in_context.xdc] for cell 'g2_datapath_i/dvi2rgb_0'
 Parsing XDC File [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_rgb2dvi_0_0/g2_datapath_rgb2dvi_0_0/g2_datapath_rgb2dvi_0_0_in_context.xdc] for cell 'g2_datapath_i/rgb2dvi_0'
 Finished Parsing XDC File [e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_rgb2dvi_0_0/g2_datapath_rgb2dvi_0_0/g2_datapath_rgb2dvi_0_0_in_context.xdc] for cell 'g2_datapath_i/rgb2dvi_0'
-Parsing XDC File [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/rtl/g2hdmi_xdc.xdc]
-Finished Parsing XDC File [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/rtl/g2hdmi_xdc.xdc]
+Parsing XDC File [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.srcs/constrs_1/new/g2_hdmi.xdc]
+Finished Parsing XDC File [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.srcs/constrs_1/new/g2_hdmi.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.srcs/constrs_1/new/g2_hdmi.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/g2_datapath_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/g2_datapath_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1292.750 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1314.637 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1292.750 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1314.637 ; gain = 0.000
 WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1292.750 ; gain = 29.578
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.637 ; gain = 51.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k325tffg900-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1292.750 ; gain = 29.578
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.637 ; gain = 51.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for sys_diff_clock_clk_n. (constraint file  e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_diff_clock_clk_n. (constraint file  e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0_in_context.xdc, line 4).
-Applied set_property IO_BUFFER_TYPE = NONE for sys_diff_clock_clk_p. (constraint file  e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0_in_context.xdc, line 5).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_diff_clock_clk_p. (constraint file  e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for sys_diff_clock_clk_n. (constraint file  e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_diff_clock_clk_n. (constraint file  e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for sys_diff_clock_clk_p. (constraint file  e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_diff_clock_clk_p. (constraint file  e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0/g2_datapath_clk_wiz_0_0_in_context.xdc, line 7).
 Applied set_property IO_BUFFER_TYPE = NONE for hdmi_in_clk_n. (constraint file  e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/g2_datapath_dvi2rgb_0_1/g2_datapath_dvi2rgb_0_1_in_context.xdc, line 2).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_in_clk_n. (constraint file  e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/g2_datapath_dvi2rgb_0_1/g2_datapath_dvi2rgb_0_1_in_context.xdc, line 3).
 Applied set_property IO_BUFFER_TYPE = NONE for hdmi_in_clk_p. (constraint file  e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/g2_datapath_dvi2rgb_0_1/g2_datapath_dvi2rgb_0_1_in_context.xdc, line 4).
@@ -138,11 +142,12 @@ Applied set_property KEEP_HIERARCHY = SOFT for g2_datapath_i. (constraint file  
 Applied set_property KEEP_HIERARCHY = SOFT for g2_datapath_i/clk_wiz_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for g2_datapath_i/dvi2rgb_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for g2_datapath_i/rgb2dvi_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for g2_datapath_i/xlconstant_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1292.750 ; gain = 29.578
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.637 ; gain = 51.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1292.750 ; gain = 29.578
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.637 ; gain = 51.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -165,25 +170,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1292.750 ; gain = 29.578
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.637 ; gain = 51.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1318.160 ; gain = 54.988
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:24 . Memory (MB): peak = 1316.328 ; gain = 53.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1318.160 ; gain = 54.988
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:24 . Memory (MB): peak = 1316.328 ; gain = 53.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1337.254 ; gain = 74.082
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:24 . Memory (MB): peak = 1335.453 ; gain = 72.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -201,37 +206,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1343.016 ; gain = 79.844
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1342.223 ; gain = 79.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1343.016 ; gain = 79.844
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1342.223 ; gain = 79.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1343.016 ; gain = 79.844
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1342.223 ; gain = 79.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1343.016 ; gain = 79.844
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1342.223 ; gain = 79.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1343.016 ; gain = 79.844
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1342.223 ; gain = 79.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1343.016 ; gain = 79.844
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1342.223 ; gain = 79.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -255,29 +260,30 @@ Report Cell Usage:
 |3     |g2_datapath_rgb2dvi_0 |     1|
 |4     |IBUF                  |     1|
 |5     |IOBUF                 |     2|
+|6     |OBUF                  |     3|
 +------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1343.016 ; gain = 79.844
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1342.223 ; gain = 79.258
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 1343.016 ; gain = 59.008
-Synthesis Optimization Complete : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1343.016 ; gain = 79.844
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:26 . Memory (MB): peak = 1342.223 ; gain = 36.766
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1342.223 ; gain = 79.258
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1343.016 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1342.223 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1372.770 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1370.371 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Synth Design complete, checksum: 9eded36e
+Synth Design complete, checksum: 149c95bb
 INFO: [Common 17-83] Releasing license: Synthesis
-35 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+40 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1372.770 ; gain = 109.598
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:34 . Memory (MB): peak = 1370.371 ; gain = 107.406
 INFO: [Common 17-1381] The checkpoint 'E:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.runs/synth_1/g2_datapath_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file g2_datapath_wrapper_utilization_synth.rpt -pb g2_datapath_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Feb 19 20:59:26 2023...
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 20 17:27:49 2023...

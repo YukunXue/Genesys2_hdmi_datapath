@@ -761,7 +761,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:81e743df</spirit:value>
+            <spirit:value>9:ab9dbc37</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -772,7 +772,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:81e743df</spirit:value>
+            <spirit:value>9:ab9dbc37</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -788,11 +788,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Feb 19 12:58:12 UTC 2023</spirit:value>
+            <spirit:value>Mon Feb 20 06:41:56 UTC 2023</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:81e743df</spirit:value>
+            <spirit:value>9:ab9dbc37</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -811,7 +811,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d8e1218a</spirit:value>
+            <spirit:value>9:0b2b3ade</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -827,11 +827,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Feb 19 12:58:12 UTC 2023</spirit:value>
+            <spirit:value>Mon Feb 20 06:41:56 UTC 2023</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d8e1218a</spirit:value>
+            <spirit:value>9:0b2b3ade</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -845,11 +845,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Feb 19 12:58:58 UTC 2023</spirit:value>
+            <spirit:value>Mon Feb 20 06:42:42 UTC 2023</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:81e743df</spirit:value>
+            <spirit:value>9:ab9dbc37</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1248,7 +1248,7 @@
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>kEdidFileName</spirit:name>
         <spirit:displayName>Kedidfilename</spirit:displayName>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kEdidFileName">dgl_720p_cea.data</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kEdidFileName">dgl_1080p_cea.data</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="boolean">
         <spirit:name>kDebug</spirit:name>
@@ -1568,7 +1568,7 @@
     <spirit:parameter>
       <spirit:name>kEdidFileName</spirit:name>
       <spirit:displayName>Preferred resolution</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.kEdidFileName" spirit:choiceRef="choice_pairs_6203f2c8">dgl_720p_cea.data</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.kEdidFileName" spirit:choiceRef="choice_pairs_6203f2c8">dgl_1080p_cea.data</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -1677,6 +1677,9 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TMDS_CLK_P.PHASE" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.IIC_BOARD_INTERFACE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.TMDS_BOARD_INTERFACE" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.kClkRange" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.kDebug" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.kEdidFileName" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.kRstActiveHigh" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>

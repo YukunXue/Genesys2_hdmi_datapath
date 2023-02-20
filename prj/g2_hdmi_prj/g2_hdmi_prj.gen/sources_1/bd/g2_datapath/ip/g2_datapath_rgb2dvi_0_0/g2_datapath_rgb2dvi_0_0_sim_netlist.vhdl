@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
 -- Date        : Sun Feb 19 20:58:46 2023
 -- Host        : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_rgb2dvi_0_0/g2_datapath_rgb2dvi_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top g2_datapath_rgb2dvi_0_0 -prefix
+--               g2_datapath_rgb2dvi_0_0_ g2_datapath_rgb2dvi_0_0_sim_netlist.vhdl
 -- Design      : g2_datapath_rgb2dvi_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -22,8 +22,6 @@ entity g2_datapath_rgb2dvi_0_0_OutputSERDES is
     PixelClk : in STD_LOGIC;
     aRst : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of g2_datapath_rgb2dvi_0_0_OutputSERDES : entity is "OutputSERDES";
 end g2_datapath_rgb2dvi_0_0_OutputSERDES;
 
 architecture STRUCTURE of g2_datapath_rgb2dvi_0_0_OutputSERDES is
@@ -659,8 +657,6 @@ entity g2_datapath_rgb2dvi_0_0_SyncAsync is
     PixelClk : in STD_LOGIC;
     AS : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of g2_datapath_rgb2dvi_0_0_SyncAsync : entity is "SyncAsync";
 end g2_datapath_rgb2dvi_0_0_SyncAsync;
 
 architecture STRUCTURE of g2_datapath_rgb2dvi_0_0_SyncAsync is
@@ -810,8 +806,6 @@ entity g2_datapath_rgb2dvi_0_0_TMDS_Encoder is
     vid_pVDE : in STD_LOGIC;
     vid_pData : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of g2_datapath_rgb2dvi_0_0_TMDS_Encoder : entity is "TMDS_Encoder";
 end g2_datapath_rgb2dvi_0_0_TMDS_Encoder;
 
 architecture STRUCTURE of g2_datapath_rgb2dvi_0_0_TMDS_Encoder is
@@ -4592,8 +4586,6 @@ entity g2_datapath_rgb2dvi_0_0_ResetBridge is
     in0 : in STD_LOGIC;
     PixelClk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of g2_datapath_rgb2dvi_0_0_ResetBridge : entity is "ResetBridge";
 end g2_datapath_rgb2dvi_0_0_ResetBridge;
 
 architecture STRUCTURE of g2_datapath_rgb2dvi_0_0_ResetBridge is
@@ -4655,8 +4647,6 @@ entity g2_datapath_rgb2dvi_0_0_ClockGen is
     \oSyncStages_reg[0]\ : in STD_LOGIC;
     aRst_n : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of g2_datapath_rgb2dvi_0_0_ClockGen : entity is "ClockGen";
 end g2_datapath_rgb2dvi_0_0_ClockGen;
 
 architecture STRUCTURE of g2_datapath_rgb2dvi_0_0_ClockGen is
@@ -4826,8 +4816,6 @@ entity g2_datapath_rgb2dvi_0_0_rgb2dvi is
     PixelClk : in STD_LOGIC;
     SerialClk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of g2_datapath_rgb2dvi_0_0_rgb2dvi : entity is "rgb2dvi";
   attribute kClkPrimitive : string;
   attribute kClkPrimitive of g2_datapath_rgb2dvi_0_0_rgb2dvi : entity is "PLL";
   attribute kClkRange : integer;

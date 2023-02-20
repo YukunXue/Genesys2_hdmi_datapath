@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
 // Date        : Sun Feb 19 20:58:46 2023
 // Host        : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_rgb2dvi_0_0/g2_datapath_rgb2dvi_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top g2_datapath_rgb2dvi_0_0 -prefix
+//               g2_datapath_rgb2dvi_0_0_ g2_datapath_rgb2dvi_0_0_stub.v
 // Design      : g2_datapath_rgb2dvi_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7k325tffg900-2

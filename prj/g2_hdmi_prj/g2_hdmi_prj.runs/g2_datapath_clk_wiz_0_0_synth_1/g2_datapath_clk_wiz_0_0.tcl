@@ -70,7 +70,11 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "g2_datapath_clk_wiz_0_0_synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 5
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config  -id {[BD 41-1306]}  -suppress 
+set_msg_config  -id {[BD 41-1271]}  -suppress 
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }

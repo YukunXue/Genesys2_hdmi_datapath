@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
--- Date        : Sun Feb 19 20:58:58 2023
+-- Date        : Mon Feb 20 14:42:42 2023
 -- Host        : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ g2_datapath_dvi2rgb_0_1_sim_netlist.vhdl
@@ -10379,167 +10379,167 @@ I2C_SlaveController: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_TWI_S
     );
 \sI2C_DataOut[0]_i_4\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"1111110330133052"
+      INIT => X"875157C5505B107A"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
+      I1 => sAddr(3),
+      I2 => sAddr(5),
       I3 => sAddr(4),
       I4 => sAddr(2),
-      I5 => sAddr(5),
+      I5 => sAddr(1),
       O => \sI2C_DataOut[0]_i_4_n_0\
     );
 \sI2C_DataOut[0]_i_5\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"2100110013132520"
+      INIT => X"0000000000400100"
     )
         port map (
-      I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(2),
+      I0 => sAddr(5),
+      I1 => sAddr(2),
+      I2 => sAddr(4),
       I3 => sAddr(1),
-      I4 => sAddr(5),
-      I5 => sAddr(4),
+      I4 => sAddr(3),
+      I5 => sAddr(6),
       O => \sI2C_DataOut[0]_i_5_n_0\
     );
 \sI2C_DataOut[0]_i_6\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"5315134445114515"
+      INIT => X"0D0014513F511C19"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(2),
-      I3 => sAddr(1),
-      I4 => sAddr(4),
-      I5 => sAddr(5),
+      I1 => sAddr(3),
+      I2 => sAddr(4),
+      I3 => sAddr(5),
+      I4 => sAddr(1),
+      I5 => sAddr(2),
       O => \sI2C_DataOut[0]_i_6_n_0\
     );
 \sI2C_DataOut[0]_i_7\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0040311741100404"
+      INIT => X"0000000009B894AB"
     )
         port map (
-      I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(2),
-      I4 => sAddr(4),
-      I5 => sAddr(5),
+      I0 => sAddr(1),
+      I1 => sAddr(4),
+      I2 => sAddr(2),
+      I3 => sAddr(5),
+      I4 => sAddr(3),
+      I5 => sAddr(6),
       O => \sI2C_DataOut[0]_i_7_n_0\
     );
 \sI2C_DataOut[1]_i_4\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0242000002110234"
+      INIT => X"1422000609010320"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(5),
+      I1 => sAddr(3),
+      I2 => sAddr(5),
+      I3 => sAddr(1),
       I4 => sAddr(2),
       I5 => sAddr(4),
       O => \sI2C_DataOut[1]_i_4_n_0\
     );
 \sI2C_DataOut[1]_i_5\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"5114404144040606"
+      INIT => X"00000000CAC74001"
     )
         port map (
-      I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(5),
-      I4 => sAddr(2),
-      I5 => sAddr(4),
+      I0 => sAddr(5),
+      I1 => sAddr(1),
+      I2 => sAddr(4),
+      I3 => sAddr(2),
+      I4 => sAddr(3),
+      I5 => sAddr(6),
       O => \sI2C_DataOut[1]_i_5_n_0\
     );
 \sI2C_DataOut[1]_i_6\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"584A000002074D55"
+      INIT => X"B0420071205B08D1"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(4),
-      I2 => sAddr(7),
-      I3 => sAddr(2),
+      I1 => sAddr(3),
+      I2 => sAddr(4),
+      I3 => sAddr(5),
       I4 => sAddr(1),
-      I5 => sAddr(5),
+      I5 => sAddr(2),
       O => \sI2C_DataOut[1]_i_6_n_0\
     );
 \sI2C_DataOut[1]_i_7\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0011055300402002"
+      INIT => X"000000001001AB41"
     )
         port map (
-      I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
+      I0 => sAddr(1),
+      I1 => sAddr(2),
+      I2 => sAddr(4),
       I3 => sAddr(5),
-      I4 => sAddr(2),
-      I5 => sAddr(4),
+      I4 => sAddr(3),
+      I5 => sAddr(6),
       O => \sI2C_DataOut[1]_i_7_n_0\
     );
 \sI2C_DataOut[2]_i_4\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0204001212152132"
+      INIT => X"0566060309019322"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(4),
-      I4 => sAddr(2),
-      I5 => sAddr(5),
-      O => \sI2C_DataOut[2]_i_4_n_0\
-    );
-\sI2C_DataOut[2]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"5111050002400400"
-    )
-        port map (
-      I0 => sAddr(6),
-      I1 => sAddr(7),
+      I1 => sAddr(3),
       I2 => sAddr(5),
       I3 => sAddr(1),
       I4 => sAddr(2),
       I5 => sAddr(4),
+      O => \sI2C_DataOut[2]_i_4_n_0\
+    );
+\sI2C_DataOut[2]_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000094200450"
+    )
+        port map (
+      I0 => sAddr(5),
+      I1 => sAddr(1),
+      I2 => sAddr(2),
+      I3 => sAddr(4),
+      I4 => sAddr(3),
+      I5 => sAddr(6),
       O => \sI2C_DataOut[2]_i_5_n_0\
     );
 \sI2C_DataOut[2]_i_6\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"1202044642462151"
+      INIT => X"C8002022C2C101CD"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(2),
+      I1 => sAddr(3),
+      I2 => sAddr(4),
       I3 => sAddr(1),
-      I4 => sAddr(5),
-      I5 => sAddr(4),
+      I4 => sAddr(2),
+      I5 => sAddr(5),
       O => \sI2C_DataOut[2]_i_6_n_0\
     );
 \sI2C_DataOut[2]_i_7\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"A020334004020301"
+      INIT => X"8001141001401010"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(4),
-      I4 => sAddr(5),
+      I1 => sAddr(3),
+      I2 => sAddr(5),
+      I3 => sAddr(1),
+      I4 => sAddr(4),
       I5 => sAddr(2),
       O => \sI2C_DataOut[2]_i_7_n_0\
     );
 \sI2C_DataOut[3]_i_4\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0122044201510740"
+      INIT => X"4562000609110300"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
+      I1 => sAddr(3),
       I2 => sAddr(5),
       I3 => sAddr(1),
       I4 => sAddr(2),
@@ -10548,249 +10548,248 @@ I2C_SlaveController: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_TWI_S
     );
 \sI2C_DataOut[3]_i_5\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"5154004144200040"
+      INIT => X"0000000086AE1424"
     )
         port map (
-      I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(5),
-      I4 => sAddr(2),
-      I5 => sAddr(4),
+      I0 => sAddr(2),
+      I1 => sAddr(1),
+      I2 => sAddr(5),
+      I3 => sAddr(4),
+      I4 => sAddr(3),
+      I5 => sAddr(6),
       O => \sI2C_DataOut[3]_i_5_n_0\
     );
 \sI2C_DataOut[3]_i_6\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"3060404614072111"
+      INIT => X"F10C604F8221012D"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(2),
-      I4 => sAddr(4),
-      I5 => sAddr(5),
+      I1 => sAddr(3),
+      I2 => sAddr(5),
+      I3 => sAddr(1),
+      I4 => sAddr(2),
+      I5 => sAddr(4),
       O => \sI2C_DataOut[3]_i_6_n_0\
     );
 \sI2C_DataOut[3]_i_7\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"9020034204200323"
+      INIT => X"8100114004110100"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(4),
-      I4 => sAddr(5),
-      I5 => sAddr(2),
+      I1 => sAddr(3),
+      I2 => sAddr(2),
+      I3 => sAddr(5),
+      I4 => sAddr(4),
+      I5 => sAddr(1),
       O => \sI2C_DataOut[3]_i_7_n_0\
     );
 \sI2C_DataOut[4]_i_4\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"4232240222531532"
+      INIT => X"47266200292B1314"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(5),
+      I1 => sAddr(3),
+      I2 => sAddr(5),
+      I3 => sAddr(1),
       I4 => sAddr(2),
       I5 => sAddr(4),
       O => \sI2C_DataOut[4]_i_4_n_0\
     );
 \sI2C_DataOut[4]_i_5\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"4104554610004041"
+      INIT => X"00000000D750800A"
     )
         port map (
-      I0 => sAddr(6),
-      I1 => sAddr(7),
+      I0 => sAddr(5),
+      I1 => sAddr(4),
       I2 => sAddr(1),
-      I3 => sAddr(4),
-      I4 => sAddr(5),
-      I5 => sAddr(2),
+      I3 => sAddr(2),
+      I4 => sAddr(3),
+      I5 => sAddr(6),
       O => \sI2C_DataOut[4]_i_5_n_0\
     );
 \sI2C_DataOut[4]_i_6\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"5642066155214111"
+      INIT => X"91A2402929296919"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
+      I1 => sAddr(3),
+      I2 => sAddr(5),
       I3 => sAddr(4),
       I4 => sAddr(2),
-      I5 => sAddr(5),
+      I5 => sAddr(1),
       O => \sI2C_DataOut[4]_i_6_n_0\
     );
 \sI2C_DataOut[4]_i_7\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"805542021810520A"
+      INIT => X"9511405110550050"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(1),
-      I2 => sAddr(7),
-      I3 => sAddr(2),
-      I4 => sAddr(5),
+      I1 => sAddr(3),
+      I2 => sAddr(5),
+      I3 => sAddr(1),
+      I4 => sAddr(2),
       I5 => sAddr(4),
       O => \sI2C_DataOut[4]_i_7_n_0\
     );
 \sI2C_DataOut[5]_i_4\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"4206202442114530"
+      INIT => X"02E2E28801432130"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(4),
-      I4 => sAddr(2),
+      I1 => sAddr(3),
+      I2 => sAddr(4),
+      I3 => sAddr(2),
+      I4 => sAddr(1),
       I5 => sAddr(5),
       O => \sI2C_DataOut[5]_i_4_n_0\
     );
 \sI2C_DataOut[5]_i_5\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"1460021020244600"
+      INIT => X"000000002A929828"
     )
         port map (
-      I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(4),
+      I0 => sAddr(1),
+      I1 => sAddr(4),
+      I2 => sAddr(5),
       I3 => sAddr(2),
-      I4 => sAddr(5),
-      I5 => sAddr(1),
+      I4 => sAddr(3),
+      I5 => sAddr(6),
       O => \sI2C_DataOut[5]_i_5_n_0\
     );
 \sI2C_DataOut[5]_i_6\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0440623417060131"
+      INIT => X"558BC48688213B05"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(2),
-      I4 => sAddr(4),
-      I5 => sAddr(5),
+      I1 => sAddr(3),
+      I2 => sAddr(5),
+      I3 => sAddr(1),
+      I4 => sAddr(2),
+      I5 => sAddr(4),
       O => \sI2C_DataOut[5]_i_6_n_0\
     );
 \sI2C_DataOut[5]_i_7\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"9324520227001103"
+      INIT => X"8010141011404400"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(4),
-      I4 => sAddr(5),
-      I5 => sAddr(2),
+      I1 => sAddr(3),
+      I2 => sAddr(5),
+      I3 => sAddr(2),
+      I4 => sAddr(4),
+      I5 => sAddr(1),
       O => \sI2C_DataOut[5]_i_7_n_0\
     );
 \sI2C_DataOut[6]_i_4\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"4602202220155232"
+      INIT => X"4026620201099322"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(5),
+      I1 => sAddr(3),
+      I2 => sAddr(5),
+      I3 => sAddr(1),
       I4 => sAddr(2),
       I5 => sAddr(4),
       O => \sI2C_DataOut[6]_i_4_n_0\
     );
 \sI2C_DataOut[6]_i_5\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"1001100000462200"
+      INIT => X"000000000080C114"
     )
         port map (
-      I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
+      I0 => sAddr(1),
+      I1 => sAddr(2),
+      I2 => sAddr(4),
       I3 => sAddr(5),
-      I4 => sAddr(2),
-      I5 => sAddr(4),
+      I4 => sAddr(3),
+      I5 => sAddr(6),
       O => \sI2C_DataOut[6]_i_5_n_0\
     );
 \sI2C_DataOut[6]_i_6\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0014044444014311"
+      INIT => X"89004C04A08909B5"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(5),
-      I4 => sAddr(2),
+      I1 => sAddr(3),
+      I2 => sAddr(5),
+      I3 => sAddr(2),
+      I4 => sAddr(1),
       I5 => sAddr(4),
       O => \sI2C_DataOut[6]_i_6_n_0\
     );
 \sI2C_DataOut[6]_i_7\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0020632415020101"
+      INIT => X"000000000290562A"
     )
         port map (
-      I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(4),
-      I4 => sAddr(5),
-      I5 => sAddr(2),
+      I0 => sAddr(4),
+      I1 => sAddr(1),
+      I2 => sAddr(2),
+      I3 => sAddr(5),
+      I4 => sAddr(3),
+      I5 => sAddr(6),
       O => \sI2C_DataOut[6]_i_7_n_0\
     );
 \sI2C_DataOut[7]_i_4\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000204001310300"
+      INIT => X"0204000044301310"
     )
         port map (
       I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(4),
+      I1 => sAddr(3),
+      I2 => sAddr(2),
       I3 => sAddr(1),
-      I4 => sAddr(2),
+      I4 => sAddr(4),
       I5 => sAddr(5),
       O => \sI2C_DataOut[7]_i_4_n_0\
     );
-\sI2C_DataOut[7]_i_5\: unisim.vcomponents.LUT6
+\sI2C_DataOut[7]_i_5\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0005004200000000"
+      INIT => X"00000100"
     )
         port map (
-      I0 => sAddr(6),
-      I1 => sAddr(2),
-      I2 => sAddr(7),
+      I0 => sAddr(3),
+      I1 => sAddr(1),
+      I2 => sAddr(2),
       I3 => sAddr(5),
-      I4 => sAddr(4),
-      I5 => sAddr(1),
+      I4 => sAddr(6),
       O => \sI2C_DataOut[7]_i_5_n_0\
     );
 \sI2C_DataOut[7]_i_6\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000000043000111"
+      INIT => X"8800000000894105"
     )
         port map (
-      I0 => sAddr(4),
-      I1 => sAddr(5),
-      I2 => sAddr(1),
-      I3 => sAddr(2),
-      I4 => sAddr(7),
-      I5 => sAddr(6),
+      I0 => sAddr(6),
+      I1 => sAddr(3),
+      I2 => sAddr(4),
+      I3 => sAddr(1),
+      I4 => sAddr(2),
+      I5 => sAddr(5),
       O => \sI2C_DataOut[7]_i_6_n_0\
     );
 \sI2C_DataOut[7]_i_7\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0014061020000001"
+      INIT => X"0000000010020484"
     )
         port map (
-      I0 => sAddr(6),
-      I1 => sAddr(7),
-      I2 => sAddr(1),
-      I3 => sAddr(2),
-      I4 => sAddr(5),
-      I5 => sAddr(4),
+      I0 => sAddr(1),
+      I1 => sAddr(2),
+      I2 => sAddr(5),
+      I3 => sAddr(4),
+      I4 => sAddr(3),
+      I5 => sAddr(6),
       O => \sI2C_DataOut[7]_i_7_n_0\
     );
 \sI2C_DataOut_reg[0]\: unisim.vcomponents.FDRE
@@ -10813,14 +10812,14 @@ I2C_SlaveController: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_TWI_S
       I0 => \sI2C_DataOut[0]_i_4_n_0\,
       I1 => \sI2C_DataOut[0]_i_5_n_0\,
       O => \sI2C_DataOut_reg[0]_i_2_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[0]_i_3\: unisim.vcomponents.MUXF7
      port map (
       I0 => \sI2C_DataOut[0]_i_6_n_0\,
       I1 => \sI2C_DataOut[0]_i_7_n_0\,
       O => \sI2C_DataOut_reg[0]_i_3_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[1]\: unisim.vcomponents.FDRE
      port map (
@@ -10842,14 +10841,14 @@ I2C_SlaveController: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_TWI_S
       I0 => \sI2C_DataOut[1]_i_4_n_0\,
       I1 => \sI2C_DataOut[1]_i_5_n_0\,
       O => \sI2C_DataOut_reg[1]_i_2_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[1]_i_3\: unisim.vcomponents.MUXF7
      port map (
       I0 => \sI2C_DataOut[1]_i_6_n_0\,
       I1 => \sI2C_DataOut[1]_i_7_n_0\,
       O => \sI2C_DataOut_reg[1]_i_3_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[2]\: unisim.vcomponents.FDRE
      port map (
@@ -10871,14 +10870,14 @@ I2C_SlaveController: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_TWI_S
       I0 => \sI2C_DataOut[2]_i_4_n_0\,
       I1 => \sI2C_DataOut[2]_i_5_n_0\,
       O => \sI2C_DataOut_reg[2]_i_2_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[2]_i_3\: unisim.vcomponents.MUXF7
      port map (
       I0 => \sI2C_DataOut[2]_i_6_n_0\,
       I1 => \sI2C_DataOut[2]_i_7_n_0\,
       O => \sI2C_DataOut_reg[2]_i_3_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[3]\: unisim.vcomponents.FDRE
      port map (
@@ -10900,14 +10899,14 @@ I2C_SlaveController: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_TWI_S
       I0 => \sI2C_DataOut[3]_i_4_n_0\,
       I1 => \sI2C_DataOut[3]_i_5_n_0\,
       O => \sI2C_DataOut_reg[3]_i_2_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[3]_i_3\: unisim.vcomponents.MUXF7
      port map (
       I0 => \sI2C_DataOut[3]_i_6_n_0\,
       I1 => \sI2C_DataOut[3]_i_7_n_0\,
       O => \sI2C_DataOut_reg[3]_i_3_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[4]\: unisim.vcomponents.FDRE
      port map (
@@ -10929,14 +10928,14 @@ I2C_SlaveController: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_TWI_S
       I0 => \sI2C_DataOut[4]_i_4_n_0\,
       I1 => \sI2C_DataOut[4]_i_5_n_0\,
       O => \sI2C_DataOut_reg[4]_i_2_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[4]_i_3\: unisim.vcomponents.MUXF7
      port map (
       I0 => \sI2C_DataOut[4]_i_6_n_0\,
       I1 => \sI2C_DataOut[4]_i_7_n_0\,
       O => \sI2C_DataOut_reg[4]_i_3_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[5]\: unisim.vcomponents.FDRE
      port map (
@@ -10958,14 +10957,14 @@ I2C_SlaveController: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_TWI_S
       I0 => \sI2C_DataOut[5]_i_4_n_0\,
       I1 => \sI2C_DataOut[5]_i_5_n_0\,
       O => \sI2C_DataOut_reg[5]_i_2_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[5]_i_3\: unisim.vcomponents.MUXF7
      port map (
       I0 => \sI2C_DataOut[5]_i_6_n_0\,
       I1 => \sI2C_DataOut[5]_i_7_n_0\,
       O => \sI2C_DataOut_reg[5]_i_3_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[6]\: unisim.vcomponents.FDRE
      port map (
@@ -10987,14 +10986,14 @@ I2C_SlaveController: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_TWI_S
       I0 => \sI2C_DataOut[6]_i_4_n_0\,
       I1 => \sI2C_DataOut[6]_i_5_n_0\,
       O => \sI2C_DataOut_reg[6]_i_2_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[6]_i_3\: unisim.vcomponents.MUXF7
      port map (
       I0 => \sI2C_DataOut[6]_i_6_n_0\,
       I1 => \sI2C_DataOut[6]_i_7_n_0\,
       O => \sI2C_DataOut_reg[6]_i_3_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[7]\: unisim.vcomponents.FDRE
      port map (
@@ -11016,14 +11015,14 @@ I2C_SlaveController: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_TWI_S
       I0 => \sI2C_DataOut[7]_i_4_n_0\,
       I1 => \sI2C_DataOut[7]_i_5_n_0\,
       O => \sI2C_DataOut_reg[7]_i_2_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 \sI2C_DataOut_reg[7]_i_3\: unisim.vcomponents.MUXF7
      port map (
       I0 => \sI2C_DataOut[7]_i_6_n_0\,
       I1 => \sI2C_DataOut[7]_i_7_n_0\,
       O => \sI2C_DataOut_reg[7]_i_3_n_0\,
-      S => sAddr(3)
+      S => sAddr(7)
     );
 end STRUCTURE;
 library IEEE;
@@ -13449,7 +13448,7 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dvi2rgb is
   attribute kDebug : string;
   attribute kDebug of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dvi2rgb : entity is "FALSE";
   attribute kEdidFileName : string;
-  attribute kEdidFileName of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dvi2rgb : entity is "dgl_720p_cea.data";
+  attribute kEdidFileName of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dvi2rgb : entity is "dgl_1080p_cea.data";
   attribute kEmulateDDC : string;
   attribute kEmulateDDC of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dvi2rgb : entity is "TRUE";
   attribute kIDLY_TapValuePs : integer;
@@ -13647,7 +13646,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   attribute kDebug : string;
   attribute kDebug of U0 : label is "FALSE";
   attribute kEdidFileName : string;
-  attribute kEdidFileName of U0 : label is "dgl_720p_cea.data";
+  attribute kEdidFileName of U0 : label is "dgl_1080p_cea.data";
   attribute kEmulateDDC : string;
   attribute kEmulateDDC of U0 : label is "TRUE";
   attribute kIDLY_TapValuePs : integer;

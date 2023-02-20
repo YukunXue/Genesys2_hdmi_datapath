@@ -154,7 +154,7 @@ BEGIN
       kIDLY_TapValuePs => 78,
       kIDLY_TapWidth => 5,
       kAddBUFG => true,
-      kEdidFileName => "dgl_720p_cea.data",
+      kEdidFileName => "dgl_1080p_cea.data",
       kDebug => false
     )
     PORT MAP (

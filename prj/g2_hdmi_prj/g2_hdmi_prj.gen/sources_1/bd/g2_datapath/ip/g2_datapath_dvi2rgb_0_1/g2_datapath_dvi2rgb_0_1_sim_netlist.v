@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Sun Feb 19 20:58:58 2023
+// Date        : Mon Feb 20 14:42:42 2023
 // Host        : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/g2_datapath_dvi2rgb_0_1_sim_netlist.v
@@ -88,7 +88,7 @@ module g2_datapath_dvi2rgb_0_1
   (* kAddBUFG = "TRUE" *) 
   (* kClkRange = "2" *) 
   (* kDebug = "FALSE" *) 
-  (* kEdidFileName = "dgl_720p_cea.data" *) 
+  (* kEdidFileName = "dgl_1080p_cea.data" *) 
   (* kEmulateDDC = "TRUE" *) 
   (* kIDLY_TapValuePs = "78" *) 
   (* kIDLY_TapWidth = "5" *) 
@@ -2046,324 +2046,323 @@ module g2_datapath_dvi2rgb_0_1_EEPROM_8b
         .Q(sAddr[7]),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'h1111110330133052)) 
+    .INIT(64'h875157C5505B107A)) 
     \sI2C_DataOut[0]_i_4 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
+        .I1(sAddr[3]),
+        .I2(sAddr[5]),
         .I3(sAddr[4]),
         .I4(sAddr[2]),
-        .I5(sAddr[5]),
+        .I5(sAddr[1]),
         .O(\sI2C_DataOut[0]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'h2100110013132520)) 
+    .INIT(64'h0000000000400100)) 
     \sI2C_DataOut[0]_i_5 
-       (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[2]),
+       (.I0(sAddr[5]),
+        .I1(sAddr[2]),
+        .I2(sAddr[4]),
         .I3(sAddr[1]),
-        .I4(sAddr[5]),
-        .I5(sAddr[4]),
+        .I4(sAddr[3]),
+        .I5(sAddr[6]),
         .O(\sI2C_DataOut[0]_i_5_n_0 ));
   LUT6 #(
-    .INIT(64'h5315134445114515)) 
+    .INIT(64'h0D0014513F511C19)) 
     \sI2C_DataOut[0]_i_6 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[2]),
-        .I3(sAddr[1]),
-        .I4(sAddr[4]),
-        .I5(sAddr[5]),
+        .I1(sAddr[3]),
+        .I2(sAddr[4]),
+        .I3(sAddr[5]),
+        .I4(sAddr[1]),
+        .I5(sAddr[2]),
         .O(\sI2C_DataOut[0]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'h0040311741100404)) 
+    .INIT(64'h0000000009B894AB)) 
     \sI2C_DataOut[0]_i_7 
-       (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[2]),
-        .I4(sAddr[4]),
-        .I5(sAddr[5]),
+       (.I0(sAddr[1]),
+        .I1(sAddr[4]),
+        .I2(sAddr[2]),
+        .I3(sAddr[5]),
+        .I4(sAddr[3]),
+        .I5(sAddr[6]),
         .O(\sI2C_DataOut[0]_i_7_n_0 ));
   LUT6 #(
-    .INIT(64'h0242000002110234)) 
+    .INIT(64'h1422000609010320)) 
     \sI2C_DataOut[1]_i_4 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[5]),
-        .I4(sAddr[2]),
-        .I5(sAddr[4]),
-        .O(\sI2C_DataOut[1]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h5114404144040606)) 
-    \sI2C_DataOut[1]_i_5 
-       (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[5]),
-        .I4(sAddr[2]),
-        .I5(sAddr[4]),
-        .O(\sI2C_DataOut[1]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h584A000002074D55)) 
-    \sI2C_DataOut[1]_i_6 
-       (.I0(sAddr[6]),
-        .I1(sAddr[4]),
-        .I2(sAddr[7]),
-        .I3(sAddr[2]),
-        .I4(sAddr[1]),
-        .I5(sAddr[5]),
-        .O(\sI2C_DataOut[1]_i_6_n_0 ));
-  LUT6 #(
-    .INIT(64'h0011055300402002)) 
-    \sI2C_DataOut[1]_i_7 
-       (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[5]),
-        .I4(sAddr[2]),
-        .I5(sAddr[4]),
-        .O(\sI2C_DataOut[1]_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'h0204001212152132)) 
-    \sI2C_DataOut[2]_i_4 
-       (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[4]),
-        .I4(sAddr[2]),
-        .I5(sAddr[5]),
-        .O(\sI2C_DataOut[2]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h5111050002400400)) 
-    \sI2C_DataOut[2]_i_5 
-       (.I0(sAddr[6]),
-        .I1(sAddr[7]),
+        .I1(sAddr[3]),
         .I2(sAddr[5]),
         .I3(sAddr[1]),
         .I4(sAddr[2]),
         .I5(sAddr[4]),
+        .O(\sI2C_DataOut[1]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000CAC74001)) 
+    \sI2C_DataOut[1]_i_5 
+       (.I0(sAddr[5]),
+        .I1(sAddr[1]),
+        .I2(sAddr[4]),
+        .I3(sAddr[2]),
+        .I4(sAddr[3]),
+        .I5(sAddr[6]),
+        .O(\sI2C_DataOut[1]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'hB0420071205B08D1)) 
+    \sI2C_DataOut[1]_i_6 
+       (.I0(sAddr[6]),
+        .I1(sAddr[3]),
+        .I2(sAddr[4]),
+        .I3(sAddr[5]),
+        .I4(sAddr[1]),
+        .I5(sAddr[2]),
+        .O(\sI2C_DataOut[1]_i_6_n_0 ));
+  LUT6 #(
+    .INIT(64'h000000001001AB41)) 
+    \sI2C_DataOut[1]_i_7 
+       (.I0(sAddr[1]),
+        .I1(sAddr[2]),
+        .I2(sAddr[4]),
+        .I3(sAddr[5]),
+        .I4(sAddr[3]),
+        .I5(sAddr[6]),
+        .O(\sI2C_DataOut[1]_i_7_n_0 ));
+  LUT6 #(
+    .INIT(64'h0566060309019322)) 
+    \sI2C_DataOut[2]_i_4 
+       (.I0(sAddr[6]),
+        .I1(sAddr[3]),
+        .I2(sAddr[5]),
+        .I3(sAddr[1]),
+        .I4(sAddr[2]),
+        .I5(sAddr[4]),
+        .O(\sI2C_DataOut[2]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000094200450)) 
+    \sI2C_DataOut[2]_i_5 
+       (.I0(sAddr[5]),
+        .I1(sAddr[1]),
+        .I2(sAddr[2]),
+        .I3(sAddr[4]),
+        .I4(sAddr[3]),
+        .I5(sAddr[6]),
         .O(\sI2C_DataOut[2]_i_5_n_0 ));
   LUT6 #(
-    .INIT(64'h1202044642462151)) 
+    .INIT(64'hC8002022C2C101CD)) 
     \sI2C_DataOut[2]_i_6 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[2]),
+        .I1(sAddr[3]),
+        .I2(sAddr[4]),
         .I3(sAddr[1]),
-        .I4(sAddr[5]),
-        .I5(sAddr[4]),
+        .I4(sAddr[2]),
+        .I5(sAddr[5]),
         .O(\sI2C_DataOut[2]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'hA020334004020301)) 
+    .INIT(64'h8001141001401010)) 
     \sI2C_DataOut[2]_i_7 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[4]),
-        .I4(sAddr[5]),
+        .I1(sAddr[3]),
+        .I2(sAddr[5]),
+        .I3(sAddr[1]),
+        .I4(sAddr[4]),
         .I5(sAddr[2]),
         .O(\sI2C_DataOut[2]_i_7_n_0 ));
   LUT6 #(
-    .INIT(64'h0122044201510740)) 
+    .INIT(64'h4562000609110300)) 
     \sI2C_DataOut[3]_i_4 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
+        .I1(sAddr[3]),
         .I2(sAddr[5]),
         .I3(sAddr[1]),
         .I4(sAddr[2]),
         .I5(sAddr[4]),
         .O(\sI2C_DataOut[3]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'h5154004144200040)) 
+    .INIT(64'h0000000086AE1424)) 
     \sI2C_DataOut[3]_i_5 
-       (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[5]),
-        .I4(sAddr[2]),
-        .I5(sAddr[4]),
+       (.I0(sAddr[2]),
+        .I1(sAddr[1]),
+        .I2(sAddr[5]),
+        .I3(sAddr[4]),
+        .I4(sAddr[3]),
+        .I5(sAddr[6]),
         .O(\sI2C_DataOut[3]_i_5_n_0 ));
   LUT6 #(
-    .INIT(64'h3060404614072111)) 
+    .INIT(64'hF10C604F8221012D)) 
     \sI2C_DataOut[3]_i_6 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[2]),
-        .I4(sAddr[4]),
-        .I5(sAddr[5]),
+        .I1(sAddr[3]),
+        .I2(sAddr[5]),
+        .I3(sAddr[1]),
+        .I4(sAddr[2]),
+        .I5(sAddr[4]),
         .O(\sI2C_DataOut[3]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'h9020034204200323)) 
+    .INIT(64'h8100114004110100)) 
     \sI2C_DataOut[3]_i_7 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[4]),
-        .I4(sAddr[5]),
-        .I5(sAddr[2]),
+        .I1(sAddr[3]),
+        .I2(sAddr[2]),
+        .I3(sAddr[5]),
+        .I4(sAddr[4]),
+        .I5(sAddr[1]),
         .O(\sI2C_DataOut[3]_i_7_n_0 ));
   LUT6 #(
-    .INIT(64'h4232240222531532)) 
+    .INIT(64'h47266200292B1314)) 
     \sI2C_DataOut[4]_i_4 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[5]),
+        .I1(sAddr[3]),
+        .I2(sAddr[5]),
+        .I3(sAddr[1]),
         .I4(sAddr[2]),
         .I5(sAddr[4]),
         .O(\sI2C_DataOut[4]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'h4104554610004041)) 
+    .INIT(64'h00000000D750800A)) 
     \sI2C_DataOut[4]_i_5 
-       (.I0(sAddr[6]),
-        .I1(sAddr[7]),
+       (.I0(sAddr[5]),
+        .I1(sAddr[4]),
         .I2(sAddr[1]),
-        .I3(sAddr[4]),
-        .I4(sAddr[5]),
-        .I5(sAddr[2]),
+        .I3(sAddr[2]),
+        .I4(sAddr[3]),
+        .I5(sAddr[6]),
         .O(\sI2C_DataOut[4]_i_5_n_0 ));
   LUT6 #(
-    .INIT(64'h5642066155214111)) 
+    .INIT(64'h91A2402929296919)) 
     \sI2C_DataOut[4]_i_6 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
+        .I1(sAddr[3]),
+        .I2(sAddr[5]),
         .I3(sAddr[4]),
         .I4(sAddr[2]),
-        .I5(sAddr[5]),
+        .I5(sAddr[1]),
         .O(\sI2C_DataOut[4]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'h805542021810520A)) 
+    .INIT(64'h9511405110550050)) 
     \sI2C_DataOut[4]_i_7 
        (.I0(sAddr[6]),
-        .I1(sAddr[1]),
-        .I2(sAddr[7]),
-        .I3(sAddr[2]),
-        .I4(sAddr[5]),
+        .I1(sAddr[3]),
+        .I2(sAddr[5]),
+        .I3(sAddr[1]),
+        .I4(sAddr[2]),
         .I5(sAddr[4]),
         .O(\sI2C_DataOut[4]_i_7_n_0 ));
   LUT6 #(
-    .INIT(64'h4206202442114530)) 
+    .INIT(64'h02E2E28801432130)) 
     \sI2C_DataOut[5]_i_4 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[4]),
-        .I4(sAddr[2]),
+        .I1(sAddr[3]),
+        .I2(sAddr[4]),
+        .I3(sAddr[2]),
+        .I4(sAddr[1]),
         .I5(sAddr[5]),
         .O(\sI2C_DataOut[5]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'h1460021020244600)) 
+    .INIT(64'h000000002A929828)) 
     \sI2C_DataOut[5]_i_5 
-       (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[4]),
+       (.I0(sAddr[1]),
+        .I1(sAddr[4]),
+        .I2(sAddr[5]),
         .I3(sAddr[2]),
-        .I4(sAddr[5]),
-        .I5(sAddr[1]),
+        .I4(sAddr[3]),
+        .I5(sAddr[6]),
         .O(\sI2C_DataOut[5]_i_5_n_0 ));
   LUT6 #(
-    .INIT(64'h0440623417060131)) 
+    .INIT(64'h558BC48688213B05)) 
     \sI2C_DataOut[5]_i_6 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[2]),
-        .I4(sAddr[4]),
-        .I5(sAddr[5]),
+        .I1(sAddr[3]),
+        .I2(sAddr[5]),
+        .I3(sAddr[1]),
+        .I4(sAddr[2]),
+        .I5(sAddr[4]),
         .O(\sI2C_DataOut[5]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'h9324520227001103)) 
+    .INIT(64'h8010141011404400)) 
     \sI2C_DataOut[5]_i_7 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[4]),
-        .I4(sAddr[5]),
-        .I5(sAddr[2]),
+        .I1(sAddr[3]),
+        .I2(sAddr[5]),
+        .I3(sAddr[2]),
+        .I4(sAddr[4]),
+        .I5(sAddr[1]),
         .O(\sI2C_DataOut[5]_i_7_n_0 ));
   LUT6 #(
-    .INIT(64'h4602202220155232)) 
+    .INIT(64'h4026620201099322)) 
     \sI2C_DataOut[6]_i_4 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[5]),
+        .I1(sAddr[3]),
+        .I2(sAddr[5]),
+        .I3(sAddr[1]),
         .I4(sAddr[2]),
         .I5(sAddr[4]),
         .O(\sI2C_DataOut[6]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'h1001100000462200)) 
+    .INIT(64'h000000000080C114)) 
     \sI2C_DataOut[6]_i_5 
-       (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
+       (.I0(sAddr[1]),
+        .I1(sAddr[2]),
+        .I2(sAddr[4]),
         .I3(sAddr[5]),
-        .I4(sAddr[2]),
-        .I5(sAddr[4]),
+        .I4(sAddr[3]),
+        .I5(sAddr[6]),
         .O(\sI2C_DataOut[6]_i_5_n_0 ));
   LUT6 #(
-    .INIT(64'h0014044444014311)) 
+    .INIT(64'h89004C04A08909B5)) 
     \sI2C_DataOut[6]_i_6 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[5]),
-        .I4(sAddr[2]),
+        .I1(sAddr[3]),
+        .I2(sAddr[5]),
+        .I3(sAddr[2]),
+        .I4(sAddr[1]),
         .I5(sAddr[4]),
         .O(\sI2C_DataOut[6]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'h0020632415020101)) 
+    .INIT(64'h000000000290562A)) 
     \sI2C_DataOut[6]_i_7 
-       (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[4]),
-        .I4(sAddr[5]),
-        .I5(sAddr[2]),
+       (.I0(sAddr[4]),
+        .I1(sAddr[1]),
+        .I2(sAddr[2]),
+        .I3(sAddr[5]),
+        .I4(sAddr[3]),
+        .I5(sAddr[6]),
         .O(\sI2C_DataOut[6]_i_7_n_0 ));
   LUT6 #(
-    .INIT(64'h0000204001310300)) 
+    .INIT(64'h0204000044301310)) 
     \sI2C_DataOut[7]_i_4 
        (.I0(sAddr[6]),
-        .I1(sAddr[7]),
+        .I1(sAddr[3]),
+        .I2(sAddr[2]),
+        .I3(sAddr[1]),
+        .I4(sAddr[4]),
+        .I5(sAddr[5]),
+        .O(\sI2C_DataOut[7]_i_4_n_0 ));
+  LUT5 #(
+    .INIT(32'h00000100)) 
+    \sI2C_DataOut[7]_i_5 
+       (.I0(sAddr[3]),
+        .I1(sAddr[1]),
+        .I2(sAddr[2]),
+        .I3(sAddr[5]),
+        .I4(sAddr[6]),
+        .O(\sI2C_DataOut[7]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'h8800000000894105)) 
+    \sI2C_DataOut[7]_i_6 
+       (.I0(sAddr[6]),
+        .I1(sAddr[3]),
         .I2(sAddr[4]),
         .I3(sAddr[1]),
         .I4(sAddr[2]),
         .I5(sAddr[5]),
-        .O(\sI2C_DataOut[7]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h0005004200000000)) 
-    \sI2C_DataOut[7]_i_5 
-       (.I0(sAddr[6]),
-        .I1(sAddr[2]),
-        .I2(sAddr[7]),
-        .I3(sAddr[5]),
-        .I4(sAddr[4]),
-        .I5(sAddr[1]),
-        .O(\sI2C_DataOut[7]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000043000111)) 
-    \sI2C_DataOut[7]_i_6 
-       (.I0(sAddr[4]),
-        .I1(sAddr[5]),
-        .I2(sAddr[1]),
-        .I3(sAddr[2]),
-        .I4(sAddr[7]),
-        .I5(sAddr[6]),
         .O(\sI2C_DataOut[7]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'h0014061020000001)) 
+    .INIT(64'h0000000010020484)) 
     \sI2C_DataOut[7]_i_7 
-       (.I0(sAddr[6]),
-        .I1(sAddr[7]),
-        .I2(sAddr[1]),
-        .I3(sAddr[2]),
-        .I4(sAddr[5]),
-        .I5(sAddr[4]),
+       (.I0(sAddr[1]),
+        .I1(sAddr[2]),
+        .I2(sAddr[5]),
+        .I3(sAddr[4]),
+        .I4(sAddr[3]),
+        .I5(sAddr[6]),
         .O(\sI2C_DataOut[7]_i_7_n_0 ));
   FDRE \sI2C_DataOut_reg[0] 
        (.C(RefClk),
@@ -2380,12 +2379,12 @@ module g2_datapath_dvi2rgb_0_1_EEPROM_8b
        (.I0(\sI2C_DataOut[0]_i_4_n_0 ),
         .I1(\sI2C_DataOut[0]_i_5_n_0 ),
         .O(\sI2C_DataOut_reg[0]_i_2_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   MUXF7 \sI2C_DataOut_reg[0]_i_3 
        (.I0(\sI2C_DataOut[0]_i_6_n_0 ),
         .I1(\sI2C_DataOut[0]_i_7_n_0 ),
         .O(\sI2C_DataOut_reg[0]_i_3_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   FDRE \sI2C_DataOut_reg[1] 
        (.C(RefClk),
         .CE(1'b1),
@@ -2401,12 +2400,12 @@ module g2_datapath_dvi2rgb_0_1_EEPROM_8b
        (.I0(\sI2C_DataOut[1]_i_4_n_0 ),
         .I1(\sI2C_DataOut[1]_i_5_n_0 ),
         .O(\sI2C_DataOut_reg[1]_i_2_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   MUXF7 \sI2C_DataOut_reg[1]_i_3 
        (.I0(\sI2C_DataOut[1]_i_6_n_0 ),
         .I1(\sI2C_DataOut[1]_i_7_n_0 ),
         .O(\sI2C_DataOut_reg[1]_i_3_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   FDRE \sI2C_DataOut_reg[2] 
        (.C(RefClk),
         .CE(1'b1),
@@ -2422,12 +2421,12 @@ module g2_datapath_dvi2rgb_0_1_EEPROM_8b
        (.I0(\sI2C_DataOut[2]_i_4_n_0 ),
         .I1(\sI2C_DataOut[2]_i_5_n_0 ),
         .O(\sI2C_DataOut_reg[2]_i_2_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   MUXF7 \sI2C_DataOut_reg[2]_i_3 
        (.I0(\sI2C_DataOut[2]_i_6_n_0 ),
         .I1(\sI2C_DataOut[2]_i_7_n_0 ),
         .O(\sI2C_DataOut_reg[2]_i_3_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   FDRE \sI2C_DataOut_reg[3] 
        (.C(RefClk),
         .CE(1'b1),
@@ -2443,12 +2442,12 @@ module g2_datapath_dvi2rgb_0_1_EEPROM_8b
        (.I0(\sI2C_DataOut[3]_i_4_n_0 ),
         .I1(\sI2C_DataOut[3]_i_5_n_0 ),
         .O(\sI2C_DataOut_reg[3]_i_2_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   MUXF7 \sI2C_DataOut_reg[3]_i_3 
        (.I0(\sI2C_DataOut[3]_i_6_n_0 ),
         .I1(\sI2C_DataOut[3]_i_7_n_0 ),
         .O(\sI2C_DataOut_reg[3]_i_3_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   FDRE \sI2C_DataOut_reg[4] 
        (.C(RefClk),
         .CE(1'b1),
@@ -2464,12 +2463,12 @@ module g2_datapath_dvi2rgb_0_1_EEPROM_8b
        (.I0(\sI2C_DataOut[4]_i_4_n_0 ),
         .I1(\sI2C_DataOut[4]_i_5_n_0 ),
         .O(\sI2C_DataOut_reg[4]_i_2_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   MUXF7 \sI2C_DataOut_reg[4]_i_3 
        (.I0(\sI2C_DataOut[4]_i_6_n_0 ),
         .I1(\sI2C_DataOut[4]_i_7_n_0 ),
         .O(\sI2C_DataOut_reg[4]_i_3_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   FDRE \sI2C_DataOut_reg[5] 
        (.C(RefClk),
         .CE(1'b1),
@@ -2485,12 +2484,12 @@ module g2_datapath_dvi2rgb_0_1_EEPROM_8b
        (.I0(\sI2C_DataOut[5]_i_4_n_0 ),
         .I1(\sI2C_DataOut[5]_i_5_n_0 ),
         .O(\sI2C_DataOut_reg[5]_i_2_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   MUXF7 \sI2C_DataOut_reg[5]_i_3 
        (.I0(\sI2C_DataOut[5]_i_6_n_0 ),
         .I1(\sI2C_DataOut[5]_i_7_n_0 ),
         .O(\sI2C_DataOut_reg[5]_i_3_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   FDRE \sI2C_DataOut_reg[6] 
        (.C(RefClk),
         .CE(1'b1),
@@ -2506,12 +2505,12 @@ module g2_datapath_dvi2rgb_0_1_EEPROM_8b
        (.I0(\sI2C_DataOut[6]_i_4_n_0 ),
         .I1(\sI2C_DataOut[6]_i_5_n_0 ),
         .O(\sI2C_DataOut_reg[6]_i_2_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   MUXF7 \sI2C_DataOut_reg[6]_i_3 
        (.I0(\sI2C_DataOut[6]_i_6_n_0 ),
         .I1(\sI2C_DataOut[6]_i_7_n_0 ),
         .O(\sI2C_DataOut_reg[6]_i_3_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   FDRE \sI2C_DataOut_reg[7] 
        (.C(RefClk),
         .CE(1'b1),
@@ -2527,12 +2526,12 @@ module g2_datapath_dvi2rgb_0_1_EEPROM_8b
        (.I0(\sI2C_DataOut[7]_i_4_n_0 ),
         .I1(\sI2C_DataOut[7]_i_5_n_0 ),
         .O(\sI2C_DataOut_reg[7]_i_2_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
   MUXF7 \sI2C_DataOut_reg[7]_i_3 
        (.I0(\sI2C_DataOut[7]_i_6_n_0 ),
         .I1(\sI2C_DataOut[7]_i_7_n_0 ),
         .O(\sI2C_DataOut_reg[7]_i_3_n_0 ),
-        .S(sAddr[3]));
+        .S(sAddr[7]));
 endmodule
 
 (* ORIG_REF_NAME = "GlitchFilter" *) 
@@ -10833,7 +10832,7 @@ module g2_datapath_dvi2rgb_0_1_TWI_SlaveCtl
 endmodule
 
 (* ORIG_REF_NAME = "dvi2rgb" *) (* kAddBUFG = "TRUE" *) (* kClkRange = "2" *) 
-(* kDebug = "FALSE" *) (* kEdidFileName = "dgl_720p_cea.data" *) (* kEmulateDDC = "TRUE" *) 
+(* kDebug = "FALSE" *) (* kEdidFileName = "dgl_1080p_cea.data" *) (* kEmulateDDC = "TRUE" *) 
 (* kIDLY_TapValuePs = "78" *) (* kIDLY_TapWidth = "5" *) (* kRstActiveHigh = "FALSE" *) 
 module g2_datapath_dvi2rgb_0_1_dvi2rgb
    (TMDS_Clk_p,

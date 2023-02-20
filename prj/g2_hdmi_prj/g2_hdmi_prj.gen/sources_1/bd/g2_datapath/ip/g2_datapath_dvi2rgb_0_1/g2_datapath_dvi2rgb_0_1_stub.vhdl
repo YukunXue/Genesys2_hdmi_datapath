@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
--- Date        : Sun Feb 19 20:58:58 2023
+-- Date        : Mon Feb 20 14:42:42 2023
 -- Host        : LAPTOP-NVLKKFTU running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               e:/g2_hdmi_datapath/Genesys2_hdmi_datapath/prj/g2_hdmi_prj/g2_hdmi_prj.gen/sources_1/bd/g2_datapath/ip/g2_datapath_dvi2rgb_0_1/g2_datapath_dvi2rgb_0_1_stub.vhdl
