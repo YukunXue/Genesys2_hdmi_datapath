@@ -47,10 +47,18 @@ vivado: 2021.2 ML enterprise
 
 通过摄像头HDMI接口（1280x720）获取视频源然后转接到HDMI输出
 
-![Snipaste_2023-02-18_19-45-13](E:\g2_hdmi_datapath\Genesys2_hdmi_datapath\pic\Snipaste_2023-02-18_19-45-13.png)
+相当于回环输出（hdmi_loop）
+
+![block](E:\g2_hdmi_datapath\Genesys2_hdmi_datapath\pic\block.png)
 
 
+
+xdc 图：
+
+![pin_xdc](E:\g2_hdmi_datapath\Genesys2_hdmi_datapath\pic\pin_xdc.png)
 
 
 
 热插拔问题
+
+hdmi_in_hpd 一定要引出来
