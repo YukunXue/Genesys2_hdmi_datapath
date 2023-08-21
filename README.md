@@ -49,13 +49,13 @@ vivado: 2021.2 ML enterprise
 
 相当于回环输出（hdmi_loop）
 
-![block](E:\g2_hdmi_datapath\Genesys2_hdmi_datapath\pic\block.png)
+![block](./pic/block.png)
 
 
 
 xdc 图：
 
-![pin_xdc](E:\g2_hdmi_datapath\Genesys2_hdmi_datapath\pic\pin_xdc.png)
+![pin_xdc](./pic/pin_xdc.png)
 
 
 
